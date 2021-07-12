@@ -9,9 +9,14 @@
   margin-top: 50px;
   margin-bottom: 94px;
 
+  @media (min-width: $screen-md) {
+    margin-top: 60px;
+    margin-bottom: 140px;
+  }
+
   @media (min-width: $screen-xxl) {
     margin-top: 0;
-    margin-bottom: 240px;
+    margin-bottom: 230px;
   }
 
   &__inner {
@@ -33,7 +38,8 @@
       display: grid;
       grid-template-columns: 310px 310px;
       justify-content: space-between;
-      gap: 40px 0;
+      gap: 30px 0;
+      margin-top: 42px;
     }
 
 
@@ -61,7 +67,9 @@
 
     @media (min-width: $screen-md) {
       min-height: 171px;
-      padding-right: 30px;
+      padding-right: 25px;
+      margin-bottom: 0;
+      font-size: 18px;
     }
 
     @media (min-width: $screen-xl) {
@@ -70,6 +78,7 @@
 
     @media (min-width: $screen-xxl) {
       margin-bottom: 0;
+      padding-right: 0;
       font-size: 20px;
       letter-spacing: 0.4px;
     }
@@ -110,6 +119,10 @@
 
   &__item-content {
     display: flex;
+  }
+
+  &__item-text {
+    margin-top: -0.5em;
   }
 }
 

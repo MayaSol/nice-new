@@ -15,6 +15,7 @@
     white-space: nowrap;
 
     @media (min-width: $screen-md) {
+      margin-bottom: 14px;
       font-size: 100px;
       letter-spacing: 2px;
     }
@@ -24,6 +25,7 @@
     }
 
     @media (min-width: $screen-xxl) {
+      margin-bottom: 15px;
     }
   }
 
@@ -34,14 +36,27 @@
     line-height: 1.6;
     letter-spacing: 0.28px;
 
-    @media (min-width: $screen-md) {
-      &::first-child {
+    @at-root #{$block-name}:first-child & {
+
+      @media (min-width: $screen-md) {
         width: 110px;
       }
+
+      @media (min-width: $screen-xxl) {
+        width: 120px;
+      }
+    }
+
+
+    @media (min-width: $screen-md) {
+      width: 175px;
     }
 
     @media (min-width: $screen-xl) {
       font-size: 15px;
+    }
+
+    @media (min-width: $screen-xxl) {
     }
   }
 }

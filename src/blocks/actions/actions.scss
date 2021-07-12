@@ -7,7 +7,11 @@
   $block-name:                &; // #{$block-name}__element
 
   @media (min-width: $screen-md) {
-    margin-top: 145px;
+    margin-top: 110px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    margin-top: 0;
   }
 
   &__inner {
@@ -19,6 +23,11 @@
 
     @media (min-width: $screen-md) {
       display: flex;
+      margin-top: 40px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 25px;
     }
   }
 
@@ -28,6 +37,10 @@
     font-weight: 500;
     letter-spacing: 0.6px;
     color: rgba(255,255,255,0.6);
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 25px;
+    }
   }
 
   &__caption {
@@ -38,6 +51,11 @@
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: 0.4px;
+
+    @media (min-width: $screen-md) {
+      padding-right: 20px;
+      padding-bottom: 42px;
+    }
 
     &::after {
       content: '';
@@ -60,6 +78,10 @@
     margin-top: 26px;
     letter-spacing: 0.6px;
 
+    @media (min-width: $screen-md) {
+      margin-top: 45px;
+    }
+
     .btn {
       display: flex;
       justify-content: space-between;
@@ -77,6 +99,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 60px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 70px;
     }
   }
 
@@ -156,7 +183,7 @@
   }
 
   .slider-prev {
-    margin-right: 30px;
+    margin-right: 25px;
   }
 
   .tns-ovh {

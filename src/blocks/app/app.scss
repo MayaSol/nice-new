@@ -13,6 +13,7 @@
   background-position: bottom center;
 
   @media (min-width: $screen-md) {
+    margin-top: 95px;
     padding-top: 50px;
     padding-bottom: 236px;
     background-image: url(../img/app_bg--tablet.jpg);
@@ -25,6 +26,13 @@
     background-position: center top -180px;
   }
 
+  @media (min-width: $screen-xxl) {
+    margin-top: 140px;
+    padding-top: 100px;
+    padding-bottom: 230px;
+    background-position: center top -190px;
+  }
+
   &__inner {
     @include container;
   }
@@ -34,11 +42,41 @@
     @media (min-width: $screen-md) {
       width: 430px;
     }
+
+    @media (min-width: $screen-xxl) {
+      width: 650px;
+    }
+
+    p {
+      @media (min-width: $screen-md) {
+        margin-top: 20px;
+      }
+    }
   }
 
   &__btns {
     display: flex;
     margin-top: 25px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 30px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 40px;
+    }
+  }
+
+  &__qr {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      width: 148px;
+      height: 148px;
+      margin-top: 59px;
+      outline: 1px solid red;
+    }
   }
 
   .btn:not(:last-child) {

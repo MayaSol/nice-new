@@ -94,7 +94,8 @@
     letter-spacing: 0.5px;
 
     @media (min-width: $screen-md) {
-      padding: 21px 30px 20px;
+      min-width: 180px;
+      padding: 20px 30px 20px;
     }
 
     &:hover,

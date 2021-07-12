@@ -94,15 +94,20 @@
       // z-index: -1;
       position: absolute;
       left: 0;
-      top: 32px;
+      top: -14px;
+      top: 0;
       //top: -5280px;
-      content: url('../screen/about-mobile.jpg');
+      content: url('../screen/about-tablet-menu.jpg');
       opacity: 0.4;
     }
   }
 
   &__main {
     margin-top: 28px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 54px;
+    }
 
     @media (min-width: $screen-xl) {
       margin-top: 85px;
@@ -112,6 +117,10 @@
   &__footer-wrapper {
     margin-top: 100px;
     flex-shrink: 0;
+
+    @media (min-width: $screen-md) {
+      margin-top: 120px;
+    }
   }
 
   &__main-title {
@@ -485,6 +494,10 @@ pre {
 
 .contacts {
   margin-top: 16px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 46px;
+  }
 }
 
 .copyright {

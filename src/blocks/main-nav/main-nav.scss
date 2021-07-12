@@ -75,10 +75,16 @@
       grid-template-columns: 1fr auto;
     }
 
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 5px;
+    }
+
     // настольный вид списка
     @media (min-width: $menu-desktop-width) {
         display: block;
         width: auto !important;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     //
@@ -86,7 +92,7 @@
 
   &__item {
     position: relative;
-    margin-right: 36px;
+    margin-right: 32px;
     letter-spacing: 0.6px;
 
     &--active {
@@ -99,7 +105,7 @@
 
   &__link {
     display: block;
-    padding: 0.5em 1em 0.5em 0;
+    padding: 12px 1em 13px 0;
     text-decoration: none;
     color: inherit;
 
@@ -187,6 +193,7 @@
 
     @media (min-width: $screen-md) {
       margin-left: 0;
+      margin-bottom: 5px;
     }
 
     @media (min-width: $menu-desktop-width) {
@@ -201,7 +208,8 @@
 
   .phone {
     margin-top: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
+    letter-spacing: 0.36px;
 
     @media (min-width: $screen-md) {
       display: none;
