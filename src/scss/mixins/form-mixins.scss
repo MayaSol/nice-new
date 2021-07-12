@@ -4,15 +4,18 @@
   display: inline-block;
   vertical-align: middle;
   width: 100%;
-  min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
+  min-height: calc(18px + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
   margin: 0;
   border: 1px solid $border-color;
-  border-radius: $border-radius;
-  padding: $field-padding-vertical  $field-padding-horizontal;
+  border-radius: 5px;
+  padding: 19px 22px 19px 30px;
   line-height: $line-height;
-  font-size: 1em;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.52px;
   font-family: inherit;
-  background-color: #fff;
+  color: inherit;
+  background-color: transparent;
   -moz-appearance: textfield; // stylelint-disable-line
   appearance: textfield;
 
@@ -38,9 +41,10 @@
   }
 
   &::placeholder {
-    color: $text-color-muted;
+    color: rgba(255,255,255,0.5);
     opacity: 1;
   }
+
 }
 
 

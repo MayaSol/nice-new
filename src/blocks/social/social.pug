@@ -31,6 +31,18 @@ mixin social(mods)
     }
 
   ul.social(class=allMods)&attributes(attributes)
+    +social-link('https://www.instagram.com/nicefitness_ru/')
+      svg(width='20px' height='20px')
+        use(xlink:href="img/sprite.svg#insta")
+    +social-link('https://vk.com/')
+      svg(width='23px' height='14px')
+        use(xlink:href="img/sprite.svg#vk")
+    +social-link('https://www.facebook.com/')
+      svg(width='10px' height='20px')
+        use(xlink:href="img/sprite.svg#fb")
+    +social-link('https://t.me/nice_fitness')
+      svg(width='21px' height='18px')
+        use(xlink:href="img/sprite.svg#tg")
     block
 
 mixin social-link(link, mods)
@@ -55,3 +67,5 @@ mixin social-link(link, mods)
   li.social__link-wrap(class=allMods)&attributes(attributes)
     a.social__link(href=link)
       block
+
+

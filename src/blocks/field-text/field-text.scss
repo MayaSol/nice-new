@@ -33,8 +33,6 @@
     @include field-help-text;
   }
 
-
-
   &--error {
 
     #{$block-name}__name,
@@ -46,6 +44,13 @@
     #{$block-name}__input {
       border-color: $color-danger;
       background-color: lighten($color-danger, 35%);
+    }
+  }
+
+  &--subscribe {
+    #{$block-name}__input {
+      border: none;
+      background-color: rgba(255,255,255,0.05)
     }
   }
 }

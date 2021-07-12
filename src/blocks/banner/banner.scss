@@ -1,0 +1,123 @@
+// В этом файле должны быть стили для БЭМ-блока main-banner, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.banner {
+
+  $block-name:                &; // #{$block-name}__element
+
+  * {
+    position: relative;
+    z-index: 10;
+  }
+
+  p {
+    hyphens: none;
+  }
+
+  &__inner {
+    @include container;
+  }
+
+  &__figures {
+    margin-top: 40px;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+
+    @media (min-width: $screen-xl) {
+
+      margin-top: 70px;
+    }
+  }
+
+  .figures:not(:last-child) {
+    margin-bottom: 24px;
+
+    @media (min-width: $screen-md) {
+      margin-right: 65px;
+      margin-bottom: 0;
+    }
+  }
+
+  &--about {
+    position: relative;
+    margin-top: 42px;
+    padding-bottom: 80px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      min-height: 860px;
+      margin-top: 80px;
+      padding-bottom: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 475px;
+      height: 316px;
+      z-index: 5;
+      background-image: url(../img/main_banner_bg--mobile.jpg);
+      background-repeat: no-repeat;
+      transform: translateX(-190px);
+
+      @media (min-width: $screen-md) {
+        width: 857px;
+        height: 571px;
+        top: -70px;
+        bottom: auto;
+        background-image: url(../img/main_banner_bg--tablet.jpg);
+        transform: translateX(-260px);
+      }
+
+      @media (min-width: $screen-xl) {
+        top: -110px;
+        transform: translateX(-200px);
+      }
+
+      @media (min-width: $screen-xxl) {
+        top: -260px;
+        width: 1619px;
+        height: 1185px;
+        background-image: url(../img/main_banner_bg.jpg);
+        transform: translateX(-600px);
+      }
+
+      @media (min-width: $screen-xxl) {
+      }
+    }
+
+    #{$block-name}__text {
+
+      @media (min-width: $screen-md) {
+        width: 340px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 590px;
+      }
+    }
+
+    + section {
+      position: relative;
+      z-index: 10;
+    }
+
+    .page__main-title {
+      width: 280px;
+      margin-bottom: 0.8em;
+
+      @media (min-width: $screen-xl) {
+        width: auto;
+      }
+    }
+
+  }
+}

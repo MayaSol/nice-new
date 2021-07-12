@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (main-banner)
+
+mixin banner(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +main-banner('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' banner--' + modsList[i].trim();
+      }
+    }
+
+  .banner(class=allMods)&attributes(attributes)
+    .banner__inner
+      block

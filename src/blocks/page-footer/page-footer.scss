@@ -2,4 +2,113 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.page-footer {}
+.page-footer {
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url('../img/footer_bg_dark--mobile.jpg');
+  background-position: top center;
+
+  @media (min-width: $screen-md) {
+    background-image: url('../img/footer_bg_dark.jpg');
+  }
+
+  &__inner {
+    @include container;
+
+    .payment {
+      margin-top: 48px;
+    }
+
+    @media (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: 280px auto;
+      gap: 0 40px;
+
+      .services {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        margin-top: 0;
+      }
+
+      .contacts {
+        margin-bottom: 50px;
+      }
+
+      .social {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        margin-top: 0;
+        margin-bottom: 0;
+        align-self: center;
+      }
+
+      .payment {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        align-self: center;
+        margin-top: 0;
+      }
+
+      .card-holders {
+        margin-top: 0;
+      }
+
+      .copyright {
+        grid-row-start: 6;
+        grid-row-end: 7;
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 558px 180px auto;
+      grid-template-rows: auto;
+      gap: 0 180px;
+
+      .page__subtitle {
+        font-size: 23px;
+      }
+
+      .payment {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+
+      .social {
+        grid-row-start: 3;
+        grid-row-end: 4;
+      }
+
+      .copyright {
+        grid-row-start: 4;
+        grid-row-end: 5;
+      }
+
+      .services {
+        grid-row-start: 1;
+        grid-row-end: 4;
+      }
+
+      .contacts {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 5;
+        margin-top: 0;
+      }
+    }
+  }
+
+  p {
+    hyphens: none;
+  }
+
+}

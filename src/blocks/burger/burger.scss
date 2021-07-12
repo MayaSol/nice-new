@@ -6,10 +6,10 @@
   display: inline-block;
   position: relative;
   z-index: 1;
-  width: 30px;
+  width: 18px;
   border: none;
   padding: 0;
-  line-height: 30px;
+  line-height: 18px;
   background: transparent;
   user-select: none;
   cursor: pointer;
@@ -24,12 +24,13 @@
     color: transparent;
     background: $toggler-part-bg-color;
     transition: background $transition-time $transition-time;
+    transform: translateY(6px);
 
     &:before,
     &:after {
       content: '';
       position: absolute;
-      left: 0;
+      right: 0;
       width: 100%;
       height: $toggler-part-height;
       background: $toggler-part-bg-color;
@@ -38,11 +39,12 @@
     }
 
     &:before {
-      top: -10px;
+      top: -7px;
+      width: 80%;
     }
 
     &:after {
-      top: 10px;
+      top: -14px;
     }
   }
 
@@ -51,6 +53,7 @@
     > span { // stylelint-disable-line  selector-combinator-blacklist
       transition: background $transition-time 0s;
       background: transparent;
+      transform: none;
 
       &:before,
       &:after {
@@ -59,6 +62,7 @@
       }
 
       &:before {
+        width: 100%;
         transform: rotate3d(0, 0, 1, 45deg);
       }
 

@@ -41,17 +41,74 @@ html(class='page  no-js', lang='ru')
 
         +page-header()
           +logo('/')
-            img(src='img/demo-logo.svg', alt='Logo', width='64', height='15')
-          block nav
+            img(src='img/logo.png', alt='Logo', width='168', height='55')
+          +phone()
+          +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
+          .page-header__content
+            block nav
 
-        block content
-          p содержимое
+
+        main.page__main
+          .page__top
+            block top
+          block content
+            p содержимое
 
       .page__footer-wrapper
         +page-footer()
           block footer
-            p «Подвал»
-            p Контактный телефон: #[a(href='tel:+70000000000') +7 000 000 00 00]
+            +form("subscribe")
+              .page__subtitle Будьте в курсе
+              .form__text
+                p Подпишитесь на нашу рассылку новостей Nicefitness
+              +field-text({
+                isTextarea: false,
+                mods: 'subscribe',
+                val: '',
+                attrs: {
+                  name: 'email',
+                  placeholder: 'Ваш Email'
+                }
+              })
+              +btn('Подписаться','main')
+            section.services
+              .page__subtitle Услуги
+              +nav-services()
+            section.card-holders
+              .page__subtitle Держателям карт
+              +nav-cardHolders()
+            section.contacts
+              .page__subtitle Контакты
+              .contacts__list
+                +contacts-item({
+                  width: 17,
+                  height: 17,
+                  icon: 'phone',
+                  mods: 'phone'
+                })
+                  a(href='tel:+7499110-21-31') +7 (499) 110-21-31
+                +contacts-item({
+                  width: 16,
+                  height: 20,
+                  icon: 'map-pin',
+                })
+                  span Москва, мкр. Северное Чертаново&nbsp;1А, ТРЦ "Авентура", 2&nbsp;этаж, станция метро Чертановская
+                +contacts-item({
+                  width: 18,
+                  height: 18,
+                  icon: 'clock',
+                  mods: 'schedule'
+                })
+                  span Будни<br> 7:00 - 24:00
+                  span Выходные<br> 8:00 - 23:00
+            section.payment
+              svg(width=276 height=21)
+                use(xlink:href="img/sprite.svg#pay-group")
+            +social()
+            .copyright © 2020 - Nicefitness. Все права защищены
+
+
+
 
     block page-bottom
       script(src='js/bundle.js')

@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cards)
+
+mixin cards(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cards('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cards--' + modsList[i].trim();
+      }
+    }
+
+  section.cards(class=allMods)&attributes(attributes)
+    .cards__inner
+      block
+
+mixin cards-item(props)
+
+  a.cards__item(class=allMods)&attributes(attributes)
+    .cards__item-content
+      .cards__item-caption !{props.text}
+      .cards__item-price !{props.price}
+      +btn('','plain')(class="cards__item-btn btn")
+        svg(width=33 height=27)
+          use(xlink:href="img/sprite.svg#arrow-right")
+
+

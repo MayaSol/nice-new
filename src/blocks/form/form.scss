@@ -4,6 +4,9 @@
 
 .form {
 
+  $block-name: &; // #{$block-name}__element
+
+
   &__fieldset {
     min-width: 0;
     margin: 0;
@@ -27,5 +30,57 @@
     line-height: $line-height;
     white-space: normal; // Привет IE
     color: currentColor;
+  }
+
+  &__text {
+    margin-top: 22px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.24px;
+  }
+
+  &--subscribe {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin-bottom: 60px;
+
+      .field-text--subscribe {
+        margin-bottom: 0;
+        flex-grow: 1;
+
+        .field-text__input {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+
+      .btn--main {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      p {
+        flex-basis: 100%;
+        margin-top: 25px;
+        order: 2;
+      }
+
+      .page__subtitle {
+        flex-basis: 100%;
+      }
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      align-self: start;
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
   }
 }

@@ -21,12 +21,12 @@ $grid-gutter-width:           30px !default;
 //------------------------------------------------------------------------------
 
 @mixin container (
-  $xs-grid-gutter:  $grid-gutter-width,
+  $xs-grid-gutter:  0,
   $sm-grid-gutter:  $grid-gutter-width,
-  $md-grid-gutter:  $grid-gutter-width,
-  $lg-grid-gutter:  $grid-gutter-width,
-  $xl-grid-gutter:  $grid-gutter-width,
-  $xxl-grid-gutter: $grid-gutter-width
+  $md-grid-gutter:  80px,
+  $lg-grid-gutter:  $md-grid-gutter,
+  $xl-grid-gutter:  $md-grid-gutter,
+  $xxl-grid-gutter: $md-grid-gutter
 ) {
   display: block;
   width: 100%;
@@ -56,14 +56,14 @@ $grid-gutter-width:           30px !default;
     }
   }
 
-  @media (min-width: $screen-lg) {
-    width: $container-lg;
+  // @media (min-width: $screen-lg) {
+  //   width: $container-lg;
 
-    @if ($lg-grid-gutter != $md-grid-gutter) {
-      padding-left: ($lg-grid-gutter / 2);
-      padding-right: ($lg-grid-gutter / 2);
-    }
-  }
+  //   @if ($lg-grid-gutter != $md-grid-gutter) {
+  //     padding-left: ($lg-grid-gutter / 2);
+  //     padding-right: ($lg-grid-gutter / 2);
+  //   }
+  // }
 
   @media (min-width: $screen-xl) {
     width: $container-xl;

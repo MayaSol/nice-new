@@ -1,0 +1,116 @@
+// В этом файле должны быть стили для БЭМ-блока advantages, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.advantages {
+
+  $block-name:                &; // #{$block-name}__elementv
+
+  margin-top: 50px;
+  margin-bottom: 94px;
+
+  @media (min-width: $screen-xxl) {
+    margin-top: 0;
+    margin-bottom: 240px;
+  }
+
+  &__inner {
+    @include container;
+  }
+
+  &__text {
+
+    @media (min-width: $screen-xl) {
+      width: 655px;
+    }
+  }
+
+  &__list {
+    margin-top: 22px;
+    counter-reset: num-counter;
+
+    @media (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: 310px 310px;
+      justify-content: space-between;
+      gap: 40px 0;
+    }
+
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 340px 340px 340px;
+      gap: 100px 0;
+      margin-top: 70px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 380px 380px 380px;
+    }
+
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-bottom: 28px;
+    counter-increment: num-counter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+
+    @media (min-width: $screen-md) {
+      min-height: 171px;
+      padding-right: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 0;
+      font-size: 20px;
+      letter-spacing: 0.4px;
+    }
+
+    &::before {
+      content: counters(num-counter, ".", decimal-leading-zero);
+      display: block;
+      margin-bottom: 32px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      bottom: 1px;
+      background-color: $white;
+    }
+
+    svg {
+      flex-shrink: 0;
+      // margin-top: 0.3em;
+      fill: $green;
+
+      @media (min-width: $screen-md) {
+        margin-right: 18px;
+      }
+    }
+  }
+
+  &__item-icon {
+    min-width: 69px;
+    flex-shrink: 0;
+  }
+
+  &__item-content {
+    display: flex;
+  }
+}
+
+

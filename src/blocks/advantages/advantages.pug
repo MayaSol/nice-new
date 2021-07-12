@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (advantages)
+
+mixin advantages(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +advantages('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' advantages--' + modsList[i].trim();
+      }
+    }
+
+  section.advantages(class=allMods)&attributes(attributes)
+    .advantages__inner
+      block
+
+
+
+mixin advantages-item(props)
+
+
+  .advantages__item(class=allMods)&attributes(attributes)
+    .advantages__item-content
+      .advantages__item-icon
+        svg(width=props.width height=props.height)
+          use(xlink:href="img/sprite.svg#" + props.icon)
+      .advangages__item-text !{props.text}

@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (actions)
+
+mixin actions(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +actions('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' actions--' + modsList[i].trim();
+      }
+    }
+
+  section.actions(class=allMods)&attributes(attributes)
+    .actions__inner
+      block
+
+
+mixin actions-item(props)
+
+  .actions__item
+    .actions__date !{props.date}
+    .actions__caption !{props.caption}
+    .actions__more
+      +btn('','plain, text')(href="#")
+        <span>Подробнее</span>
+        svg(width=17 height=14)
+          use(xlink:href="img/sprite.svg#arrow-right")
+    if(typeof(props.img) !== 'undefined' && props.img)
+      .actions__img
+        img(src=props.img)
+    block

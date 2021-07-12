@@ -8,13 +8,17 @@ let config = {
     'no-js',
   ],
   'alwaysAddBlocks': [
-    // 'sprite-svg',
+    'sprite-svg',
+    'slider',
+    'test' //!!!!
     // 'sprite-png',
     // 'object-fit-polyfill',
   ],
   'addStyleBefore': [
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
+    'tiny-slider/dist/tiny-slider.css',
+
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -27,8 +31,10 @@ let config = {
     './script.js',
   ],
   'addAssets': {
-    'src/fonts/demo-empty-open-sans.woff2': 'fonts/',
-    'src/img/demo-*.{png,svg,jpg,jpeg}': 'img/',
+    'src/fonts/': 'fonts/',
+    'src/img/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/screen/': 'screen/',
+
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },

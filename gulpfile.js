@@ -43,7 +43,8 @@ const ghpages = require('gh-pages');
 const path = require('path');
 
 // Глобальные настройки этого запуска
-const buildLibrary = process.env.BUILD_LIBRARY == 'yes' ? true : false;
+// const buildLibrary = process.env.BUILD_LIBRARY == 'yes' ? true : false;
+const buildLibrary = true;
 const nth = {};
 nth.config = require('./config.js');
 nth.blocksFromHtml = Object.create(nth.config.alwaysAddBlocks); // блоки из конфига сразу добавим в список блоков
@@ -80,11 +81,14 @@ let postCssPlugins = [
 
 
 function writePugMixinsFile(cb) {
+  console.log('writePugMixinsFile');
   let allBlocksWithPugFiles = getDirectories('pug');
+  console.log(allBlocksWithPugFiles);
   let pugMixins = '//-' + doNotEditMsg.replace(/\n /gm,'\n  ');
   allBlocksWithPugFiles.forEach(function(blockName) {
     pugMixins += `include ${dir.blocks.replace(dir.src,'../')}${blockName}/${blockName}.pug\n`;
   });
+  console.log(pugMixins);
   fs.writeFileSync(`${dir.src}pug/mixins.pug`, pugMixins);
   cb();
 }
@@ -176,10 +180,11 @@ function generateSvgSprite(cb) {
   let spriteSvgPath = `${dir.blocks}sprite-svg/svg/`;
   if(nth.config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
     return src(spriteSvgPath + '*.svg')
-      .pipe(svgmin(function () {
-        return { plugins: [{ cleanupIDs: { minify: true } }] }
-      }))
-      .pipe(svgstore({ inlineSvg: true }))
+      // .pipe(svgmin(function () {
+      //   return { plugins: [{ cleanupIDs: { minify: true } }] }
+      // }))
+      // .pipe(svgstore({ inlineSvg: true }))
+      .pipe(svgstore({ }))
       .pipe(rename('sprite.svg'))
       .pipe(dest(`${dir.blocks}sprite-svg/img/`));
   }
