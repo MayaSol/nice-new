@@ -1,0 +1,31 @@
+//- Все примеси в этом файле должны начинаться c имени блока (gallery)
+
+mixin gallery(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +gallery('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' gallery--' + modsList[i].trim();
+      }
+    }
+
+  .gallery(class=allMods)&attributes(attributes)
+    .gallery__inner
+      block
+
+
+mixin gallery-item(props)
+
+  a.gallery__item(class=allMods)&attributes(attributes)
+    .gallery__img
+      img(class="lazyload" data-src=props.src data-srcset=props.srcset data-sizes=props.sizes)
+      //- img(class="lazyload" data-sizes="auto" data-src=props.src data-srcset=props.srcset)
+

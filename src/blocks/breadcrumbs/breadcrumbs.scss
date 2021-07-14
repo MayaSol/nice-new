@@ -33,10 +33,15 @@
     white-space: nowrap;
 
     &:not(:last-child):after {
-      content: '>';
+      content: '';
       display: inline-block;
+      width: 5px;
+      height: 9px;
       margin-left: 0.8em;
       color: $text-color-muted;
+      background-image: url(../img/arrow-bracket-right.svg);
+      background-size: 5px 9px;
+      opacity: 0.5;
     }
   }
 }

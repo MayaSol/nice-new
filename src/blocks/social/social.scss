@@ -52,4 +52,34 @@
   &__text {
     @include hide-text;
   }
+
+  &--soc {
+    width: 120px;
+    margin-top: 25px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 32px;
+      width: auto;
+    }
+
+    #{$block-name}__link-wrap {
+      margin-bottom: 9px;
+    }
+
+    #{$block-name}__link-wrap:not(:nth-child(4n)) {
+      margin-right: 9px;
+
+      @media (min-width: $screen-md) {
+        margin-right: 20px;
+      }
+    }
+
+    #{$block-name}__link-wrap:nth-child(2n) {
+      margin-right: 0;
+
+      @media (min-width: $screen-md) {
+        margin-right: 20px;
+      }
+    }
+  }
 }

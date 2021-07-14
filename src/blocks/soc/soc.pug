@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (soc)
+
+mixin soc(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +soc('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' soc--' + modsList[i].trim();
+      }
+    }
+
+  .soc(class=allMods)&attributes(attributes)
+    .soc__inner
+      block

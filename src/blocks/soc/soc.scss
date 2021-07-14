@@ -1,0 +1,92 @@
+// В этом файле должны быть стили для БЭМ-блока soc, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.soc {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+  margin-top: 95px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 140px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 237px;
+    height: 478px;
+    left: 50%;
+    top: 110px;
+    transform: translateX(-80px);
+    background-image: url('../img/social-bg-mobile.jpg');
+    background-repeat: no-repeat;
+
+    @media (min-width: $screen-md) {
+      width: 766px;
+      height: 852px;
+      left: 0;
+      top: 0;
+      transform: none;
+      background-image: url('../img/social-bg-tablet.jpg');
+    }
+  }
+
+  &__inner {
+    @include container;
+    position: relative;
+    z-index: 10;
+  }
+
+  .page__subtitle {
+    width: 210px;
+
+    @media (min-width: $screen-md) {
+      width: 310px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__figures {
+    margin-top: 75px;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      margin-top: 55px;
+    }
+
+    .figures {
+      margin-bottom: 28px;
+
+      @media (min-width: $screen-md) {
+        margin-right: 45px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+
+      &:nth-child(2) {
+
+        .figures__caption {
+          width: 165px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 46px;
+    width: 200px;
+
+    @media (min-width: $screen-md) {
+      width: 230px;
+    }
+  }
+}

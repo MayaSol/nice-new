@@ -1,0 +1,109 @@
+// В этом файле должны быть стили для БЭМ-блока gallery, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.gallery {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    @include container;
+
+    @media (min-width: $screen-md) {
+      position: relative;
+      width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &--main {
+    margin-top: 95px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 150px;
+      padding-bottom: 160px;
+    }
+  }
+
+  &__list {
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 40px;
+    }
+  }
+
+  &__img {
+    outline: 1px solid red;
+    border-radius: 5px;
+    overflow: hidden;
+    line-height: 0;
+
+    @media (min-width: $screen-md) {
+      width: 334px;
+      height: 170px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      object-fit: contain;
+      font-family: 'object-fit: contain;';
+
+      @media (min-width: $screen-md) {
+        object-fit: none;
+        font-family: none;
+      }
+    }
+  }
+
+  .page__subtitle {
+    width: 768px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (min-width: $screen-md) {
+
+    .tns-slide-active {
+      opacity: 0.5;
+    }
+
+    .tns-slide-active + .tns-slide-active {
+      opacity: 1;
+
+      .gallery__img {
+        transform: scale(1.55,2.1);
+        transform-origin: top center;
+      }
+    }
+
+    .tns-slide-active + .tns-slide-active + .tns-slide-active {
+      opacity: 0.5;
+
+      .gallery__img {
+        transform: none;
+      }
+    }
+
+    .tns-ovh {
+      overflow: visible;
+    }
+
+    .slider-controls {
+      position: absolute;
+      z-index: 12;
+
+      @media (min-width: $screen-md) {
+        display: flex;
+        flex-direction: column;
+        right: 23px;
+        bottom: -192px;
+      }
+    }
+  }
+}

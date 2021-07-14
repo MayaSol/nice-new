@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-controls)
+
+mixin slider-controls(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +slider-controls('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' slider-controls--' + modsList[i].trim();
+      }
+    }
+
+  .slider-controls(class=allMods aria-label="Carousel Navigation" tabindex="0")&attributes(attributes)
+    button.slider-btn.slider-prev(type="button" data-controls="prev" tabindex="-1")
+      svg(width=17 height=15)
+          use(xlink:href="img/sprite.svg#arrow-right")
+    button.slider-btn.slider-next(type="button" data-controls="next" tabindex="-1")
+      svg(width=17 height=15)
+          use(xlink:href="img/sprite.svg#arrow-right")
+      block

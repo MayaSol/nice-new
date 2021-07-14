@@ -1,0 +1,85 @@
+// В этом файле должны быть стили для БЭМ-блока group, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.group {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    @include container;
+
+    @media (min-width: $screen-md) {
+      width: 100% !important;
+      max-width: 1200px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 32px;
+    }
+  }
+
+  .page__subtitle {
+    width: 180px;
+
+    @media (min-width: $screen-md) {
+      width: auto;
+      width: 768;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 210px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-positon: center;
+      font-family: 'object-fit: cover; object-positon: center;';
+    }
+  }
+
+  &__caption {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: -1em;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.32px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: -0.8em;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+
+  .slider-controls {
+    margin-top: 30px;
+
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  .slider-prev {
+    margin-right: 15px;
+  }
+}

@@ -9,7 +9,6 @@ let config = {
   ],
   'alwaysAddBlocks': [
     'sprite-svg',
-    'slider',
     'test' //!!!!
     // 'sprite-png',
     // 'object-fit-polyfill',
@@ -18,6 +17,8 @@ let config = {
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     'tiny-slider/dist/tiny-slider.css',
+    'src/blocks/slider/slider.scss',
+    'lightgallery/css/lightgallery-bundle.min.css',
 
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
@@ -25,6 +26,7 @@ let config = {
     // 'src/scss/print.scss',
   ],
   'addJsBefore': [
+    '../blocks/slider/slider.js',
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
   ],
   'addJsAfter': [
@@ -33,6 +35,7 @@ let config = {
   'addAssets': {
     'src/fonts/': 'fonts/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/img/gallery/': 'img/gallery',
     'src/screen/': 'screen/',
 
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

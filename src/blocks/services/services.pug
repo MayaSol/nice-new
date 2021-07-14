@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (services)
+
+mixin services(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +services('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' services--' + modsList[i].trim();
+      }
+    }
+
+  .services(class=allMods)&attributes(attributes)
+    .services__inner
+      block
+
+mixin services-item(props)
+
+  a.services__item(class=allMods href="#")&attributes(attributes)
+    .services__img
+      img(src=props.src)
+    .services__caption !{props.caption}
+      block

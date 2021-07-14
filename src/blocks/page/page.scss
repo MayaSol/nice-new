@@ -97,7 +97,7 @@
       top: -14px;
       top: 0;
       //top: -5280px;
-      content: url('../screen/about-tablet-menu.jpg');
+      content: url('../screen/index-tablet.jpg');
       opacity: 0.4;
     }
   }
@@ -153,6 +153,31 @@
     }
   }
 
+  &__main-title--lg {
+    margin-bottom: 5px;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+    font-weight: 800;
+
+    span {
+      display: block;
+    }
+
+    @media (min-width: $screen-md) {
+      font-size: 60px;
+    }
+  }
+
+  &__main-subtitle {
+    margin-bottom: 22px;
+    font-size: 18px;
+    letter-spacing: 0.36px;
+
+    @media (min-width: $screen-md) {
+      font-size: 30px;
+    }
+  }
+
   &__subtitle {
     margin-top: 0;
     margin-bottom: 10px;
@@ -171,6 +196,10 @@
       font-size: 45px;
       line-height: 1.2;
       letter-spacing: 0.9px;
+    }
+
+    span {
+      color: $green;
     }
   }
 

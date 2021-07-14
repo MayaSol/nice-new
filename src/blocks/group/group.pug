@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (group)
+
+mixin group(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +group('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' group--' + modsList[i].trim();
+      }
+    }
+
+  .group(class=allMods)&attributes(attributes)
+    .group__inner
+      block
+
+mixin group-item(props)
+
+
+  .group__item(class=allMods)&attributes(attributes)
+    .group__item-inner
+      .group__img
+        img(src=props.src)
+      .group__caption !{props.caption}

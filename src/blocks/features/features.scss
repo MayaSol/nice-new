@@ -1,0 +1,55 @@
+// В этом файле должны быть стили для БЭМ-блока features, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.features {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__item {
+    margin-bottom: 18px;
+
+    @media (min-width: $screen-md) {
+      width: 145px;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(2) {
+      @media (min-width: $screen-md) {
+        margin-right: 35px;
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $screen-md) {
+        width: 110px;
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 12px;
+    font-size: 0;
+    line-height: 0;
+
+    svg {
+      color: $color-bright;
+    }
+  }
+
+  &__text {
+    letter-spacing: 0.28px;
+  }
+
+  &--soc {
+    margin-top: 45px;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+  }
+}

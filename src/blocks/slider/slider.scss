@@ -10,6 +10,11 @@
 .slider-btn {
   display: inline-flex;
   vertical-align: middle;
+  width: 55px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(101,204,50,0.2);
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -20,9 +25,11 @@
 }
 
 .slider-prev {
+    margin-right: 25px;
 
   svg {
     transform: rotate(180deg);
   }
 }
+
 

@@ -1,5 +1,5 @@
 const ready = require('./utils/documentReady.js');
-// import 'lazysizes';
+import 'lazysizes';
 
 ready(function(){
   // document.addEventListener('lazybeforeunveil', function(e){

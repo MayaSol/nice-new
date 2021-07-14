@@ -1,0 +1,130 @@
+// В этом файле должны быть стили для БЭМ-блока services, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.services {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin-top: 90px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 135px;
+  }
+
+  &__inner {
+    @include container;
+  }
+
+  &__list {
+    margin-top: 25px;
+
+    @media (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      margin-top: 42px;
+      gap: 0 10px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    position: relative;
+    width: 280px;
+    height: 220px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+
+    @media (min-width: $screen-md) {
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #66cc32;
+      opacity: 0.15;
+      z-index: 3;
+
+      @media (min-width: $screen-md) {
+        opacity: 0.6;
+      }
+    }
+
+    &:nth-child(2n) {
+
+      &::after {
+        opacity: 0.6;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    * {
+      position: relative;
+      z-index: 10;
+    }
+
+    &:nth-child(4n+1) {
+      @media (min-width: $screen-md) {
+        outline: 1px solid red;
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        &::after {
+          opacity: 0.15;
+        }
+      }
+    }
+
+    &:nth-child(4n) {
+      outline: 1px solid orange;
+      grid-column-start: 2;
+      grid-column-end: 4;
+
+      &::after {
+        opacity: 0.15;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  &__caption {
+    margin-top: auto;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 25px;
+    }
+  }
+}

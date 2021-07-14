@@ -11,50 +11,120 @@ block nav
   +main-nav('10')
 
 block top
-  +breadcrumbs()
-      +breadcrumbs-item('Главная', '/')
-      +breadcrumbs-item('О клубе')
 
 block content
-  +banner('about')
+  +banner('main')
     .banner__text
-      h1.page__main-title о клубе <span>nicefitness</span>
-      p.lead Nicefitness – это правильный клуб для реализации Ваших планов по улучшению внешности, укреплению здоровья, созданию красивой и стройной фигуры.
-      p Добро пожаловать на официальный сайт фитнес-клуба «Nicefitness» – центр здоровья, прекрасного самочувствия, домашней атмосферы, красоты и хорошего настроения! Мы находимся – в 7 минутах ходьбы от станции метро Чертановская – в здании бизнес - центра «Авиньон 1», поэтому вы можете легко добраться к нам, как на машине, так и пешком.
-      .banner__figures
-        +figures({value: '7', caption: 'лет успешной<br> работы'})
-        +figures({value: '1250', caption: 'кв. метров<br> настоящего фитнеса'})
+      h1.page__main-title.page__main-title--lg <span>nicefitness</span>фитнес клуб
+      .page__main-subtitle в Северном Чертаново
+      +btn('Заказать клубную карту','main')
 
-  +advantages()
-    .page__subtitle Преимущества
-    .advantages__text
-      p Наш фитнес-клуб реализует программы спортивной подготовки по многочисленным направлениям, привлекая для этого команду высокопрофессиональных тренеров и специалистов в других областях.
-    .advantages__list
-      +advantages-item({
-      text:'Приятная атмосфера, частью которой, Вы можете стать уже сегодня',
-      icon: 'heart',width: 51, height: 37})
-      +advantages-item({
-      text:'Оптимальное соотношение цены и качества',
-      icon: 'save-money',width: 41, height: 50})
-      +advantages-item({
-      text:'Высокий профессионализм тренеров',
-      icon: 'strong',width: 40, height: 45})
-      +advantages-item({
-      text:'Удобное<br> расположение',
-      icon: 'map',width: 41, height: 45})
-      +advantages-item({
-      text:'Большой выбор абонементов и тренировочных программ',
-      icon: 'id-card',width: 49, height: 37})
-      +advantages-item({
-      text:'Просторные раздевалки и индивидуальные душевые',
-      icon: 'locker',width: 50, height: 46})
+  +group()
+    .page__subtitle Групповые программы
+    .group__list
+      +group-item({
+        src: 'img/group-mobile-01.jpg',
+        caption: 'Уроки низко-и<br> высокоударной аэробики'
+      })
+      +group-item({
+        src: 'img/group-mobile-02.jpg',
+        caption: 'Уроки низко-и<br> высокоударной аэробики'
+      })
+      +group-item({
+        src: 'img/group-mobile-03.jpg',
+        caption: 'Занятия со штангой или мячом'
+      })
+    <div class="slider-controls" aria-label="Carousel Navigation" tabindex="0">
+      <button class="slider-btn slider-prev" type="button" data-controls="prev" tabindex="-1" aria-controls="tns1">
+        svg(width=17 height=15)
+          use(xlink:href="img/sprite.svg#arrow-right")
+      </button>
+      <button class="slider-btn slider-next" type="button" data-controls="next" tabindex="-1" aria-controls="tns1">
+        svg(width=17 height=15)
+          use(xlink:href="img/sprite.svg#arrow-right")
+      </button>
+    </div>
 
-  +cards()
-    .page__subtitle Заказать клубную карту
-    .cards__list
-      +cards-item({text:'Клубная карта 1&nbsp;мес.', price: '2 250'})(href="#")
-      +cards-item({text:'Клубная карта 5&nbsp;мес.', price: '8 000'})
-      +cards-item({text:'Клубная карта 12&nbsp;мес.', price: '18 000'})
+  +services()
+    .page__subtitle Услуги
+    .services__list
+      +services-item({
+        src: 'img/sauna-mobile.jpg',
+        caption: 'Финская сауна'
+      })
+      +services-item({
+        src: 'img/martial-mobile.jpg',
+        caption: 'Студия единоборств'
+      })
+      +services-item({
+        src: 'img/test-mobile.jpg',
+        caption: 'Фитнес тестирование'
+      })
+      +services-item({
+        src: 'img/solar-mobile.jpg',
+        caption: 'Солярий'
+      })
+      +services-item({
+        src: 'img/crossfit-mobile.jpg',
+        caption: 'Кроссфит зона'
+      })
+      +services-item({
+        src: 'img/children-mobile.jpg',
+        caption: 'детские секции'
+      })
+      +services-item({
+        src: 'img/beauty-mobile.jpg',
+        caption: 'Салон красоты'
+      })
+      +services-item({
+        src: 'img/massage-mobile.jpg',
+        caption: 'массаж'
+      })
+    .services__btn
+      +btn('Заказать клубную карту','main')
+
+  +soc()
+    .page__subtitle <span>Nicefitness</span> в социальных сетях
+    +social('soc')
+    .soc__figures
+      +figures({value: '7', caption: 'лет успешной<br> работы'})
+      +figures({value: '1250', caption: 'кв. метров<br> настоящего фитнеса'})
+    +features('soc')
+      +features-item({
+        width: 45,
+        height: 45,
+        icon: 'lockers',
+        text: 'Просторные раздевалки'
+      })
+      +features-item({
+        width: 45,
+        height: 45,
+        icon: 'shower-head',
+        text: 'Индивидуальные душевые'
+      })
+      +features-item({
+        width: 42,
+        height: 45,
+        icon: 'tire',
+        text: 'Кроссфит зона'
+      })
+    +btn('Подробнее о клубе','main')
+
+  +gallery('main')
+    .page__subtitle фотогалерея
+    .gallery__list
+      +gallery-item({
+        src: '/img/gallery/gallery-01__280x170.jpg',
+        sizes: "(max-width: 767px) 316px,(max-width: 1199px) 518px",
+        srcset: "/img/gallery/gallery-01__518x357.jpg 518w,/img/gallery/gallery-01__280x170.jpg 316w"
+      })(href="/img/gallery/gallery-01-orig.jpg")
+      +gallery-item({
+        src: '/img/gallery/gallery-02.jpg',
+      })(href="/img/gallery/gallery-02-orig.jpg")
+      +gallery-item({
+        src: '/img/gallery/gallery-03.jpg',
+      })(href="/img/gallery/gallery-03-orig.jpg")
+    +slider-controls()
 
   +app()
     .page__subtitle Скачайте мобильное приложение

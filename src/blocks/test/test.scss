@@ -11,3 +11,14 @@
 // .banner--about::after {
 //   display: none;
 // }
+.group__img {
+  outline: 1px solid red;
+
+  img {
+    opacity: 0;
+  }
+}
+
+.soc::after {
+  display: none;
+}
