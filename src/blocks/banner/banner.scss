@@ -30,8 +30,16 @@
     }
 
     @media (min-width: $screen-xl) {
-
       margin-top: 70px;
+    }
+  }
+
+  &__right {
+    display: none;
+
+    @media (min-width: $screen-xxl) {
+      display: block;
+      margin-top: -50px;
     }
   }
 
@@ -138,6 +146,10 @@
       padding-bottom: 0;
     }
 
+    @media (min-width: $screen-xxl) {
+      margin-top: 0;
+    }
+
     #{$block-name}__inner {
       @media (min-width: $screen-md) {
         margin-top: 10px;
@@ -146,6 +158,16 @@
         background-image: url(../img/bg_index_top--tablet.jpg);
         background-position: top -100px right 6px;
         background-repeat: no-repeat;
+      }
+
+      @media (min-width: $screen-xxl) {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0;
+        padding-top: 225px;
+        padding-bottom: 415px;
+        background-image: url(../img/bg_index_top--wide.jpg);
+        background-position: top -95px right -185px;
       }
 
       &::after {
@@ -159,13 +181,26 @@
           background-image: url(../img/hand.png);
           z-index: 15;
         }
+
+        @media (min-width: $screen-xxl) {
+          top: 374px;
+          right: 693px;
+          background-image: url(../img/hand-wide.png);
+        }
       }
     }
 
-
-
     .btn--main {
       min-width: 255px;
+    }
+  }
+
+  &--cards {
+
+    margin-top: 42px;
+
+    .page__main-title span {
+      display: block;
     }
   }
 }

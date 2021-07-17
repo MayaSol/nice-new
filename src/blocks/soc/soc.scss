@@ -10,34 +10,93 @@
   margin-top: 95px;
 
   @media (min-width: $screen-md) {
-    margin-top: 140px;
+    margin-top: 0;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 237px;
-    height: 478px;
-    left: 50%;
-    top: 110px;
-    transform: translateX(-80px);
-    background-image: url('../img/social-bg-mobile.jpg');
-    background-repeat: no-repeat;
 
-    @media (min-width: $screen-md) {
-      width: 766px;
-      height: 852px;
-      left: 0;
-      top: 0;
-      transform: none;
-      background-image: url('../img/social-bg-tablet.jpg');
-    }
-  }
 
   &__inner {
     @include container;
     position: relative;
-    z-index: 10;
+
+    @media (min-width: $screen-md) {
+      padding-top: 140px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 210px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 237px;
+      height: 478px;
+      left: 50%;
+      top: 110px;
+      transform: translateX(-80px);
+      background-image: url('../img/social-bg-mobile.jpg');
+      background-repeat: no-repeat;
+
+      @media (min-width: $screen-md) {
+        width: 766px;
+        height: 852px;
+        left: 0;
+        top: 0;
+        transform: none;
+        background-image: url('../img/social-bg-tablet.jpg');
+      }
+
+      @media (min-width: $screen-md) {
+        width: 1934px;
+        height: 1207px;
+        left: -185px;
+        top: 40px;
+        background-image: url('../img/soc_bg_plain_wide.jpg');
+      }
+
+      @media (min-width: $screen-xxl) {
+        width: 1934px;
+        height: 1207px;
+        left: -185px;
+        top: 40px;
+        background-image: url('../img/soc_bg_plain_wide.jpg');
+      }
+    }
+
+    &::before {
+
+      @media (min-width: $screen-xl) {
+        content: '';
+        position: absolute;
+        width: 1920px;
+        height: 2181px;
+        left: 50%;
+        top: -40px;
+        background-image: url('../img/soc-woman-xl.png');
+        background-repeat: no-repeat;
+        transform: translateX(-550px);
+        z-index: 15;
+      }
+
+      @media (min-width: $screen-xxl) {
+        content: '';
+        position: absolute;
+        width: 1920px;
+        height: 2181px;
+        left: 50%;
+        top: -280px;
+        background-image: url('../img/soc-woman-wide.png');
+        transform: translateX(-950px);
+        z-index: 15;
+      }
+    }
+
+    * {
+      position: relative;
+      z-index: 10;
+    }
+
   }
 
   .page__subtitle {
@@ -45,6 +104,11 @@
 
     @media (min-width: $screen-md) {
       width: 310px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 460px;
+      margin-bottom: 60px;
     }
 
     span {
@@ -58,6 +122,10 @@
     @media (min-width: $screen-md) {
       display: flex;
       margin-top: 55px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 75px;
     }
 
     .figures {
@@ -84,9 +152,14 @@
   .btn {
     margin-top: 46px;
     width: 200px;
+    z-index: 20;
 
     @media (min-width: $screen-md) {
       width: 230px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 56px;
     }
   }
 }

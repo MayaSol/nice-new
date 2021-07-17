@@ -1,24 +1,45 @@
-// В этом файле должны быть стили для БЭМ-блока test, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+// // В этом файле должны быть стили для БЭМ-блока test, его элементов,
+// // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.test {
+// .test {
 
-  $block-name:                &; // #{$block-name}__element
-}
-
-
-// .banner--about::after {
-//   display: none;
+//   $block-name:                &; // #{$block-name}__element
 // }
-.group__img {
+
+
+// // .banner--about::after {
+// //   display: none;
+// // }
+// // .group__img {
+// //   outline: 1px solid red;
+
+// //   img {
+// //     opacity: 0;
+// //   }
+// // }
+
+// .soc__inner::after {
+//   opacity: 0;
+// }
+
+// .banner--main .banner__inner {
+//   background: none !important;
+// }
+
+// .cards__item {
+//   // background: none !important;
+//   // outline: 1px solid red;
+// }
+
+// .group__img {
+//   outline: 1px solid red;
+//   img {
+//     opacity: 0;
+//   }
+// }
+
+.form {
+  background: none !important;
   outline: 1px solid red;
-
-  img {
-    opacity: 0;
-  }
-}
-
-.soc::after {
-  display: none;
 }

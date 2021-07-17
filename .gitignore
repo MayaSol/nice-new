@@ -1,6 +1,7 @@
 design/
 build/*
 !build/readme.md
+src/screen/
 
 src/pug/mixins.pug
 src/js/entry.js

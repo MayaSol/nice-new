@@ -1,19 +1,17 @@
 //- Все примеси в этом файле должны начинаться c имени блока (modal)
 
-mixin modal(id, title, mods)
+mixin modal(props, mods)
 
   //- Принимает:
-  //-   id      {string} - идентификатор
-  //-   title   {string} - заголовок
+  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +modal('modal-demo-01', 'Заголовок', 'some')
-          .modal__body
-            p Текст
-          .modal__footer
-            button.btn(type='button', data-dismiss='modal') Закрыть
+        +modal('Текст', 'some-mod')
 
   -
+    if(typeof(props) === 'undefined') {
+      var props = {};
+    }
     // список модификаторов
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
@@ -23,10 +21,19 @@ mixin modal(id, title, mods)
       }
     }
 
-  .modal(id=id, class=allMods, tabindex='-1', role='dialog')&attributes(attributes)
-    .modal__dialog(role='document')
+  .modal(class=allMods id=props.id aria-hidden='true')&attributes(attributes)
+    .modal__backdrop(tabindex='1' data-custom-close="")
+      .modal__dialog(role='dialog' aria-modal='true' aria-labelledby= props.id + '-title' )
         .modal__content
-          .modal__header
-            span.close.modal__close(data-dismiss='modal', aria-label='Закрыть') #[span]
-            h4.modal__title!= title
+          +btn('','plain')(class="modal__close" aria-label='Close modal' data-custom-close="")
+            svg(width=30 height=30)
+              use(xlink:href="img/sprite.svg#close")
           block
+
+
+
+
+
+
+
+

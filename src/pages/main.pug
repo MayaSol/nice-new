@@ -1,0 +1,218 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block nav
+  +main-nav('10')
+
+block top
+
+block content
+  +banner('main')
+    .banner__text
+      h1.page__main-title.page__main-title--lg <span>nicefitness</span>фитнес клуб
+      .page__main-subtitle в Северном Чертаново
+      +btn('Заказать клубную карту','main')(data-custom-open='card-order')
+    .banner__right
+      .cards.cards--banner.cards--nav
+        .cards__list
+          +cards-item({text:'Клубная карта 1&nbsp;мес.', price: '2 250'},'01')(href="#")
+          +cards-item({text:'Клубная карта 5&nbsp;мес.', price: '8 000'},'02')
+          +cards-item({text:'Клубная карта 12&nbsp;мес.', price: '18 000'},'03')
+
+  +group()
+    .page__subtitle Групповые программы
+    .group__list
+      +group-item({
+        src: 'img/group-mobile-01.jpg',
+        caption: 'Уроки низко-и<br> высокоударной аэробики'
+      })
+      +group-item({
+        src: 'img/group-mobile-02.jpg',
+        caption: 'Уроки низко-и<br> высокоударной аэробики'
+      })
+      +group-item({
+        src: 'img/group-mobile-03.jpg',
+        caption: 'Занятия со штангой или мячом'
+      })
+    <div class="slider-controls" aria-label="Carousel Navigation" tabindex="0">
+      <button class="slider-btn slider-prev" type="button" data-controls="prev" tabindex="-1" aria-controls="tns1">
+        svg(width=17 height=15)
+          use(xlink:href="img/sprite.svg#arrow-right")
+      </button>
+      <button class="slider-btn slider-next" type="button" data-controls="next" tabindex="-1" aria-controls="tns1">
+        svg(width=17 height=15)
+          use(xlink:href="img/sprite.svg#arrow-right")
+      </button>
+    </div>
+
+  +services()
+    .page__subtitle Услуги
+    .services__list
+      +services-item({
+        src: '/img/service-crossfit-280x220.jpg',
+        sizes: "(max-width: 767px) 280px,(max-width: 1279px) 453px,(min-width: 1920px) 728px",
+        srcset: "/img/service-sauna-280x220.jpg 280w,/img/service-sauna-453x220.jpg 453w,/img/service-sauna-728x353.jpg 728w",
+        caption: 'Финская сауна'
+      })
+      +services-item({
+        src: '/img/service-martial-280x220.jpg',
+        sizes: "(max-width: 767px) 280px,(max-width: 1199px) 280px,(min-width: 1920px) 728px",
+        srcset: "/img/service-martial-280x220.jpg 280w,/img/service-martial-728x353.jpg 728w",
+        caption: 'Студия единоборств'
+      })
+      +services-item({
+        src: '/img/service-solar-280x220.jpg',
+        sizes: "(max-width: 1199px) 280px,(min-width: 1920px) 453px",
+        srcset: "/img/service-solar-280x220.jpg 280w,/img/service-solar-453x220.jpg 453w",
+        caption: 'Солярий'
+      })
+      +services-item({
+        src: '/img/service-test-280x220.jpg',
+        sizes: "(max-width: 767px) 280px,(max-width: 1199px) 453px",
+        srcset: "/img/service-test-280x220.jpg 280w,/img/service-test-453x220.jpg 453w",
+        caption: 'Фитнес тестирование'
+      })
+      +services-item({
+        src: '/img/service-crossfit-280x220.jpg',
+        sizes: "(max-width: 767px) 280px,(max-width: 1279px) 453px",
+        srcset: "/img/service-crossfit-280x220.jpg 280w,/img/service-crossfit-453x220.jpg 453w",
+        caption: 'Кроссфит зона'
+      })
+      +services-item({
+        src: '/img/service-children-280x220.jpg',
+        sizes: "(max-width: 1199px) 280px,(max-width: 1279px) 453px",
+        srcset: "/img/service-children-280x220.jpg 280w,/img/service-children-453x220.jpg 453w",
+        caption: 'детские секции'
+      })
+      +services-item({
+        src: '/img/service-massage-280x220.jpg',
+        sizes: "(max-width: 1199px) 280px,(max-width: 1279px) 453px",
+        srcset: "/img/service-massage-280x220.jpg 280w,/img/service-massage-453x220.jpg 453w",
+        caption: 'массаж'
+      })
+      +services-item({
+        src: '/img/service-beauty-280x220.jpg',
+        sizes: "(max-width: 1199px) 280px,(max-width: 1279px) 453px,(min-width: 1920px) 728px",
+        srcset: "/img/service-beauty-280x220.jpg 280w,/img/service-beauty-453x220.jpg 453w,/img/service-beauty-728x353.jpg 728w",
+        caption: 'Салон красоты'
+      })
+    .services__btn
+      +btn('Заказать клубную карту','main')
+
+  +soc()
+    .page__subtitle <span>Nicefitness</span> в социальных сетях
+    +social('soc')
+    .soc__figures
+      +figures({value: '7', caption: 'лет успешной<br> работы'})
+      +figures({value: '1250', caption: 'кв. метров<br> настоящего фитнеса'})
+    +features('soc')
+      +features-item({
+        width: 45,
+        height: 45,
+        icon: 'lockers',
+        text: 'Просторные раздевалки'
+      })
+      +features-item({
+        width: 45,
+        height: 45,
+        icon: 'shower-head',
+        text: 'Индивидуальные душевые'
+      })
+      +features-item({
+        width: 42,
+        height: 45,
+        icon: 'tire',
+        text: 'Кроссфит зона'
+      })
+    +btn('Подробнее о клубе','main')
+
+  +gallery('main')
+    .page__subtitle фотогалерея
+    .gallery__list
+      +gallery-item({
+        src: '/img/gallery/gallery-01__280x170.jpg',
+        sizes: "(max-width: 767px) 280px,(max-width: 1199px) 518px",
+        srcset: "/img/gallery/gallery-01__518x357.jpg 518w,/img/gallery/gallery-01__280x170.jpg 280w"
+      })(href="/img/gallery/gallery-01-orig.jpg")
+      +gallery-item({
+        src: '/img/gallery/gallery-02.jpg',
+      })(href="/img/gallery/gallery-02-orig.jpg")
+      +gallery-item({
+        src: '/img/gallery/gallery-03.jpg',
+      })(href="/img/gallery/gallery-03-orig.jpg")
+      +gallery-item({
+        src: '/img/gallery/gallery-01__280x170.jpg',
+        sizes: "(max-width: 767px) 280px,(max-width: 1199px) 518px",
+        srcset: "/img/gallery/gallery-01__518x357.jpg 518w,/img/gallery/gallery-01__280x170.jpg 280w"
+      })(href="/img/gallery/gallery-01-orig.jpg")
+      +gallery-item({
+        src: '/img/gallery/gallery-02.jpg',
+      })(href="/img/gallery/gallery-02-orig.jpg")
+    +slider-controls()
+
+  +app()
+    .page__subtitle Скачайте мобильное приложение
+    p Мобильное приложение Nicefitness для эффективного достижения ваших спортивных целей.
+    .app__btns
+      +btn('','plain, appstore')
+      +btn('','plain, googleplay')
+    .app__qr
+
+  +actions()
+    .page__subtitle Акции клуба
+    .actions__list
+      +actions-item({
+        date: '19 марта 2019',
+        caption: 'Новый тренажёр Foreman "FS-404 ЖИМ ОТ ПЛЕЧ"'
+      })
+      +actions-item({
+        date: '30 ноября 2018',
+        caption: 'В фитнес-клубе Nicefitness прошел турнир по "Толканию гири"',
+        img: '../img/card_01.jpg'
+      })
+      +actions-item({
+        date: '22 августа 2018',
+        caption: 'В фитнес-клубе Nicefitness прошел "фитнес-марафон"'
+      })
+      +actions-item({
+        date: '30 июля 2018',
+        caption: 'Новый комплект тренажеров в Nicefitness'
+      })
+      +actions-item({
+        date: '19 марта 2019',
+        caption: 'Новый тренажёр Foreman "FS-404 ЖИМ ОТ ПЛЕЧ"'
+      })
+      +actions-item({
+        date: '30 ноября 2018',
+        caption: 'В фитнес-клубе Nicefitness прошел турнир по "Толканию гири"',
+        img: '../img/card_01.jpg'
+      })
+    .actions__btns
+      +btn('Все акции','main')(href="#'")
+      <div class="slider-controls" aria-label="Carousel Navigation" tabindex="0">
+        <button class="slider-btn slider-prev" type="button" data-controls="prev" tabindex="-1" aria-controls="tns1">
+          svg(width=17 height=15)
+            use(xlink:href="img/sprite.svg#arrow-right")
+        </button>
+        <button class="slider-btn slider-next" type="button" data-controls="next" tabindex="-1" aria-controls="tns1">
+          svg(width=17 height=15)
+            use(xlink:href="img/sprite.svg#arrow-right")
+        </button>
+      </div>
+
+//- block footer
+//-   p footer
+
+block append page-bottom
+  +modal({id: 'card-order'})
+    +card-order()
+  +modal({id: 'service-massage'})(class="modal-service")
+    .modal-service__title массаж
+    p Скульптура тела <a href="#">Лаборатория-массажа.рф</a> рада предложить вам множество полезных и приятных процедур, благодаря которым вы сможете скорректировать фигуру, избавиться от болей в мышцах и полностью расслабиться.<br> <b>Дополнительным бонусом мы сделали скидку 15% на первый сеанс.</b>
+

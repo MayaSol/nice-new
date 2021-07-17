@@ -15,6 +15,10 @@
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
+
+    @media (min-width: $screen-xxl) {
+      max-width: 1920px;
+    }
   }
 
   &__list {
@@ -23,18 +27,25 @@
     @media (min-width: $screen-md) {
       margin-top: 32px;
     }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 20px;
+    }
   }
 
   .page__subtitle {
     width: 180px;
 
     @media (min-width: $screen-md) {
-      width: auto;
-      width: 768;
+      width: 768px;
       margin-left: auto;
       margin-right: auto;
       padding-left: 40px;
       padding-right: 40px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: $container-xxl;
     }
   }
 
@@ -43,6 +54,10 @@
     height: 210px;
     border-radius: 12px;
     overflow: hidden;
+
+    @media (min-width: $screen-xxl) {
+      height: 280px;
+    }
 
     img {
       width: 100%;

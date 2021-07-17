@@ -1,0 +1,261 @@
+// В этом файле должны быть стили для БЭМ-блока cards, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cards-lg {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin-top: 30px;
+  position: relative;
+  z-index: 15;
+
+  &__inner {
+    @include container;
+  }
+
+  &__list {
+  }
+
+  &__item-wrapper {
+    margin-bottom: 38px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    min-height: 180px;
+    padding: 20px 20px 18px 24px;
+    background-size: 100%;
+    color: inherit;
+    text-decoration: none;
+    border-radius: $border-radius;
+
+    @media (min-width: $screen-md) {
+      width: 513px;
+      height: 356px;
+      min-height: 153px;
+      padding-bottom: 25px;
+      padding-right: 15px;
+      background-size: cover;
+    }
+
+    @media (min-width: $screen-xxl) {
+      flex-shrink: 0;
+      width: 680px;
+      min-height: 473px;
+      margin-bottom: 0;
+      padding: 40px 32px 40px 48px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 35px;
+      }
+    }
+
+    &--01 {
+      background-image: url(../img/card_01.jpg);
+    }
+
+    &--02 {
+      background-image: url(../img/card_02.jpg);
+    }
+
+    &--03 {
+      background-image: url(../img/card_03.jpg);
+    }
+  }
+
+  &__item-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  &__item-caption {
+    width: 150px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    line-height: 1.3;
+
+    @media (min-width: $screen-xxl) {
+      width: auto;
+      margin-bottom: 30px;
+      font-size: 30px;
+      line-height: 1.5;
+      letter-spacing: 1.15px;
+    }
+  }
+
+  &__item-price {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 0.8;
+    letter-spacing: 0.56px;
+    color: $color-bright;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 55px;
+      letter-spacing: 1.09px;
+    }
+
+    &::after  {
+      content: "\f158";
+      font-family: 'CustomIcons';
+      font-size: 13px;
+      margin-left: 8px;
+
+      @media (min-width: $screen-xxl) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__item-btn {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 0;
+    line-height: 0;
+    align-self: flex-end;
+
+    svg {
+      stroke: $green;
+      width: 16px;
+      height: 13px;
+
+      @media (min-width: $screen-md) {
+        width: 33px;
+        height: 27px;
+      }
+    }
+  }
+
+  &--nav {
+    align-self: end;
+
+    #{$block-name}__list {
+      display: block;
+      margin-top: 0;
+    }
+
+    #{$block-name}__item {
+      width: 173px;
+      min-height: 120px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    #{$block-name}__item-caption {
+      width: 100px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: none;
+    }
+
+    #{$block-name}__item-price {
+      font-size: 22px;
+      letter-spacing: 0.44px;
+    }
+
+    #{$block-name}__item-btn svg {
+      width: 13px;
+      height: 10px;
+    }
+  }
+
+  &--banner {
+    display: block;
+
+    #{$block-name}__item {
+      width: 230px;
+      min-height: 155px;
+      padding: 20px 16px 20px 26px;
+
+      &:not(:last-child) {
+        margin-bottom: 38px;
+      }
+    }
+
+    #{$block-name}__item-caption {
+      width: 140px;
+      margin-bottom: 14px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    #{$block-name}__item-price {
+      font-size: 30px;
+    }
+
+    #{$block-name}__item-btn svg {
+      width: 20px;
+      height: 15px;
+    }
+  }
+
+  &__info {
+
+    @media (min-width: $screen-xxl) {
+      margin-left: 80px;
+    }
+
+    &--all-cards {
+      display: block;
+
+      @media (min-width: $screen-md) {
+        display: none;
+      }
+    }
+
+    .list-dots {
+
+      @media (min-width: $screen-md) {
+        column-count: 2;
+        column-gap: 30px;
+
+        li br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__info-list {
+    display: none;
+
+    @media (min-width: $screen-md) {
+      display: block;
+    }
+  }
+
+  .list-dots {
+
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-order)
+
+mixin card-order(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-order('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-order--' + modsList[i].trim();
+      }
+    }
+
+  .card-order(class=allMods)&attributes(attributes)
+    +form('card-order')
+      .form__title Заказать<br> клубную карту
+      +field-text({
+        isTextarea: false,
+        title: 'Ваше имя',
+        val: '',
+        attrs: {
+          name: 'name',
+          placeholder: 'Введите Ваше имя'
+        }
+      })
+      +field-text({
+        isTextarea: false,
+        title: 'Контактный телефон',
+        mods: 'phone',
+        val: '',
+        attrs: {
+          name: 'phone'        }
+      })
+      +field-checkbox([
+        {
+          mods: 'user-agree',
+          title: 'Я соглашаюсь с условиями <a href="#">обработки персональных данных</a>',
+          attrs: {
+            name: 'user-agree',
+          }
+        },
+      ])
+      +btn('Отправить заявку','submit,main')

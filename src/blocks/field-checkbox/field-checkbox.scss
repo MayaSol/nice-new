@@ -4,7 +4,7 @@
 
 .field-checkbox {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   display: block;
   margin-bottom: $typo-margin-vertical;
@@ -15,7 +15,7 @@
 
   &__input-wrap {
 
-    & + & {
+    &+& {
       margin-top: $typo-margin-vertical;
     }
 
@@ -26,12 +26,25 @@
         color: $color-danger;
       }
     }
+
+    &--user-agree {
+
+      #{$block-name}__name-text {
+        font-size: 12px;
+        letter-spacing: 0.48px;
+        line-height: 1.5;
+        a {
+          color: $color-bright;
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   &__name {
     display: inline-block;
     position: relative;
-    padding-left: 1.5em;
+    padding-left: 45px;
     margin-right: 0.6em;
     font-weight: 400;
     line-height: $line-height;
@@ -60,26 +73,26 @@
 
     // свой чекбокс без картинок
 
-    @at-root input:disabled ~ & {
+    @at-root input:disabled~& {
       cursor: not-allowed;
     }
 
     &:before {
       content: '';
       position: absolute;
-      top: 5px;
+      top: 3px;
       left: 0;
-      width: 14px;
-      height: 14px;
-      border: 2px solid currentColor;
-      border-radius: $border-radius;
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 5px;
     }
 
-    @at-root input:focus ~ &:before {
+    @at-root input:focus~&:before {
       @include field-focus;
     }
 
-    @at-root input:disabled ~ &:before {
+    @at-root input:disabled~&:before {
       border-color: $gray-light;
       background: $gray-lighter;
     }
@@ -87,22 +100,22 @@
     &:after {
       content: '';
       position: absolute;
-      top: 6px;
-      left: 3px;
+      top: 12px;
+      left: 7px;
       width: 14px;
       height: 6px;
       opacity: 0;
-      border-left: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
       transform: rotate(-45deg);
       transition: opacity $transition-time;
-      box-shadow: 1px 2px 0 #fff, inset 0 -2px 0 #fff;
+      // box-shadow: 1px 2px 0 #fff, inset 0 -2px 0 #fff;
 
-      @at-root input:checked ~ & {
+      @at-root input:checked~& {
         opacity: 1;
       }
 
-      @at-root input:checked:disabled ~ & {
+      @at-root input:checked:disabled~& {
         border-color: $gray-light;
       }
     }

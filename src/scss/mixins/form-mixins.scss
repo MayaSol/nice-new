@@ -8,7 +8,7 @@
   margin: 0;
   border: 1px solid $border-color;
   border-radius: 5px;
-  padding: 19px 22px 19px 30px;
+  padding: 15px 22px 19px 24px;
   line-height: $line-height;
   font-size: 13px;
   line-height: 18px;
@@ -69,7 +69,9 @@
 
 @mixin field-name {
   display: block;
-  margin-bottom: 0.4em;
+  margin-bottom: 10px;
+  font-size: 13px;
   line-height: $line-height;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 0.52px;
 }

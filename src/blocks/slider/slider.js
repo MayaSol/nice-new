@@ -14,7 +14,7 @@ ready(function(){
       mouseDrag: true,
       controls: true,
       controlsPosition: 'bottom',
-      controlsContainer: '.slider-controls',
+      controlsContainer: '.actions__btns .slider-controls',
       nav: false,
       gutter: 48,
       responsive: {
@@ -54,8 +54,9 @@ ready(function(){
             fixedWidth: 300,
           },
           1920: {
-            "fixedWidth": 320,
-            gutter: 130
+            fixedWidth: 400,
+            items: 5,
+            gutter: 45
           }
         }
       });
@@ -86,8 +87,12 @@ ready(function(){
             center: true
           },
           1920: {
-            "fixedWidth": 320,
-            gutter: 130
+            items: 4,
+            fixedWidth: 440,
+            gutter: 40,
+            // autoWidth: true,
+            center: false,
+            edgePadding: -155
           }
         }
       });

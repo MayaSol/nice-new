@@ -21,7 +21,17 @@ mixin cards(mods)
     .cards__inner
       block
 
-mixin cards-item(props)
+mixin cards-item(props,mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cards-item--' + modsList[i].trim();
+      }
+    }
 
   a.cards__item(class=allMods)&attributes(attributes)
     .cards__item-content
@@ -30,5 +40,3 @@ mixin cards-item(props)
       +btn('','plain')(class="cards__item-btn btn")
         svg(width=33 height=27)
           use(xlink:href="img/sprite.svg#arrow-right")
-
-

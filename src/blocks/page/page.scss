@@ -87,6 +87,7 @@
     overflow: hidden;
   }
 
+
   &__content {
     flex-grow: 1;
 
@@ -97,21 +98,25 @@
       top: -14px;
       top: 0;
       //top: -5280px;
-      content: url('../screen/index-tablet.jpg');
+      content: url('../screen/cards-mobile.jpg');
       opacity: 0.4;
     }
   }
 
   &__main {
-    margin-top: 28px;
+    // margin-top: 28px;
 
-    @media (min-width: $screen-md) {
-      margin-top: 54px;
-    }
+    // @media (min-width: $screen-md) {
+    //   margin-top: 54px;
+    // }
 
-    @media (min-width: $screen-xl) {
-      margin-top: 85px;
-    }
+    // @media (min-width: $screen-xl) {
+    //   margin-top: 85px;
+    // }
+
+    // @media (min-width: $screen-xl) {
+    //   margin-top: 0;
+    // }
   }
 
   &__footer-wrapper {
@@ -166,6 +171,14 @@
     @media (min-width: $screen-md) {
       font-size: 60px;
     }
+
+    @media (min-width: $screen-xl) {
+      font-size: 80px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      font-size: 100px;
+    }
   }
 
   &__main-subtitle {
@@ -175,6 +188,12 @@
 
     @media (min-width: $screen-md) {
       font-size: 30px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 62px;
+      font-size: 40px;
+      line-height: 1.2;
     }
   }
 
@@ -206,7 +225,15 @@
   &__top {
     @include container;
     position: relative;
+    margin-top: 28px;
     z-index: 10;
+
+    @media (min-width: $screen-md) {
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 80px;
+    }
   }
 }
 
@@ -534,4 +561,54 @@ pre {
   font-size: 12px;
   letter-spacing: 0.24px;
   color: rgba(255, 255, 255, 0.6);
+}
+
+
+.list-title {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.35px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+}
+
+.list-dots {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.27;
+
+  li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 28px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-bright;
+    }
+  }
+}
+
+.page-cards {
+
+  .page__footer-wrapper {
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+    }
+  }
 }

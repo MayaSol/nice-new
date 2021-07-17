@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (test-training)
+
+mixin test-training(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +test-training('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' test-training--' + modsList[i].trim();
+      }
+    }
+
+  .test-training(class=allMods)&attributes(attributes)
+    .test-training__inner
+      block

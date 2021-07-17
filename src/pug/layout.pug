@@ -36,7 +36,12 @@ html(class='page  no-js', lang='ru')
   body
     noscript У вас отключен JavaScript. Это пугает.
 
-    .page__inner
+    block vars
+
+    -
+      var pageClass= 'page-' + pageName;
+
+    .page__inner(class= pageClass)
       .page__content
 
         +page-header()

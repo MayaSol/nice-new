@@ -76,7 +76,6 @@
     }
 
     @media (min-width: $screen-xxl) {
-      margin-bottom: 5px;
     }
 
     // настольный вид списка
@@ -94,6 +93,10 @@
     position: relative;
     margin-right: 32px;
     letter-spacing: 0.6px;
+
+    @media (min-width: $screen-xl) {
+      margin-right: 0;
+    }
 
     &--active {
 

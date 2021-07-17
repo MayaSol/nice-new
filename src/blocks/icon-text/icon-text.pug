@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (icon-text)
+
+mixin icon-text(props, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +icon-text('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' icon-text--' + modsList[i].trim();
+      }
+    }
+
+  .icon-text(class=allMods)&attributes(attributes)
+    .icon-text__icon
+      svg(width=props.width height=props.height)
+        use(xlink:href="img/sprite.svg#" + props.icon)
+    .icon-text__text !{props.text}

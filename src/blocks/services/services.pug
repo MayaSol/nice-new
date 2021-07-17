@@ -23,8 +23,8 @@ mixin services(mods)
 
 mixin services-item(props)
 
-  a.services__item(class=allMods href="#")&attributes(attributes)
+  .services__item(class=allMods data-custom-open='service-massage')&attributes(attributes)
     .services__img
-      img(src=props.src)
+      img(class="lazyload" data-src=props.src data-srcset=props.srcset data-sizes=props.sizes)
     .services__caption !{props.caption}
       block
