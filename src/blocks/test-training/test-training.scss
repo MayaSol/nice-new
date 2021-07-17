@@ -9,7 +9,7 @@
 
   @media (min-width: $screen-md) {
     margin-bottom: 80px;
-    padding-top: 210px;
+    padding-top: 180px;
   }
 
   @media (min-width: $screen-xxl) {
@@ -19,9 +19,16 @@
 
 
   &__inner {
-    @media (min-width: $screen-md) {
-      position: relative;
-      @include container;
+    position: relative;
+    @include container;
+
+    @media (max-width: $screen-sm) {
+      width: 300px;
+    }
+
+    @media (max-width: $screen-md) {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     &::before {
@@ -29,23 +36,24 @@
       @media (min-width: $screen-md) {
         content: '';
         position: absolute;
-        top: -220px;
+        top: -420px;
         width: 768px;
-        height: 1110px;
+        height: 1100px;
         background-image: url(../img/test-training-bg-md.jpg);
         z-index: 5;
       }
 
       @media (min-width: $screen-xl) {
         top: -320px;
-        left: 0;
+        left: -200px;
         width: 1768px;
         height: 1000px;
         background-image: url(../img/test-training-bg-xxl.jpg);
       }
 
       @media (min-width: $screen-xxl) {
-        left: 200px;
+        height: 1160px;
+        left: 0;
       }
     }
 

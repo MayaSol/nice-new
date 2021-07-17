@@ -91,16 +91,16 @@
   &__content {
     flex-grow: 1;
 
-    &::before {
-      // z-index: -1;
-      position: absolute;
-      left: 0;
-      top: -14px;
-      top: 0;
-      //top: -5280px;
-      content: url('../screen/cards-mobile.jpg');
-      opacity: 0.4;
-    }
+
+    // &::before {
+    //   // z-index: -1;
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   //top: -5280px;
+    //   content: url('../screen/cards.jpg');
+    //   opacity: 0.4;
+    // }
   }
 
   &__main {
@@ -229,6 +229,7 @@
     z-index: 10;
 
     @media (min-width: $screen-md) {
+      margin-top: 52px;
     }
 
     @media (min-width: $screen-xxl) {
@@ -575,6 +576,11 @@ pre {
   @media (min-width: $screen-md) {
     margin-bottom: 25px;
     font-size: 20px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    font-size: 24px;
+    letter-spacing: .47px;
   }
 }
 

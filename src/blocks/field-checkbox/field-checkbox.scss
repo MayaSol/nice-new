@@ -29,15 +29,28 @@
 
     &--user-agree {
 
+      @media (min-width: $screen-md) {
+        margin-top: 30px;
+      }
+
       #{$block-name}__name-text {
         font-size: 12px;
         letter-spacing: 0.48px;
         line-height: 1.5;
+
+        @media (min-width: $screen-md) {
+          font-size: 13px;
+          line-height: 30px;
+        }
+
         a {
           color: $color-bright;
           text-decoration: none;
         }
       }
+
+
+
     }
   }
 
