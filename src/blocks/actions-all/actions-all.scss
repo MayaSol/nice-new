@@ -1,0 +1,85 @@
+// В этом файле должны быть стили для БЭМ-блока actions-all, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.actions-all {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+  margin-top: 42px;
+  z-index: 5;
+
+  @media (min-width: $screen-md) {
+    margin-top: 52px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    margin-top: 70px;
+  }
+
+  &__inner {
+    @include container;
+  }
+
+
+  &__list {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $screen-xxl) {
+      justify-content: flex-start;
+    }
+  }
+
+  .actions__item {
+    display: block;
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-md) {
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 52px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-right: 254px;
+      margin-bottom: 40px;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+    }
+  }
+
+  .actions__caption {
+    @media (min-width: $screen-md) {
+      flex-grow: 1;
+    }
+  }
+
+
+  .pagination {
+    margin-top: 50px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 10px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 732px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: -50px;
+    }
+  }
+}

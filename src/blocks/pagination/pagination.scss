@@ -5,17 +5,37 @@
 .pagination {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   margin-top: $typo-margin-vertical;
-  margin-bottom: $typo-margin-vertical;
+  margin-bottom: 0;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   &__item {
     display: block;
-    min-width: 2em;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.68px;
     // border: 1px solid $border-color;
-    padding: 0.3em 0.6em;
+    padding: 0.3em 0.7em;
     text-decoration: none;
     text-align: center;
-    color: $text-color;
+    color: rgba(255, 255, 255, 0.6);
+
+    @media (min-width: $screen-md) {
+      display: inline-flex;
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      margin-right: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
 
     & + & {
       border-left: 0;
@@ -24,14 +44,14 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $text-color;
+      color: $color-bright;
     }
 
     @at-root a#{&} {
 
       &:hover,
       &:focus {
-        background-color: $gray-lightest;
+        color: $color-bright;
       }
     }
 
@@ -40,7 +60,16 @@
     }
 
     &--active {
-      background-color: $gray-lightest;
+      color: $color-bright;
+
+      @media (min-width: $screen-md) {
+        border: 1px solid $color-bright;
+        border-radius: 50%;
+      }
     }
+  }
+
+  &__btn {
+    @include btn-arrow;
   }
 }

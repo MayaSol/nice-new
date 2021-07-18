@@ -24,7 +24,14 @@ mixin pagination(mods)
     }
 
   .pagination(class=allMods, aria-label='Page navigation')&attributes(attributes)
-    block
+    .pagination__btn.pagination__btn--prev
+      svg(width=17 height=15)
+        use(xlink:href="img/sprite.svg#arrow-right")
+    .pagination__items
+      block items
+    .pagination__btn
+      svg(width=17 height=15)
+        use(xlink:href="img/sprite.svg#arrow-right")
 
 
 

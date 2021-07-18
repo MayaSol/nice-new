@@ -29,7 +29,7 @@ mixin cards-item(props,mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' cards-item--' + modsList[i].trim();
+        allMods = allMods + ' cards__item--' + modsList[i].trim();
       }
     }
 

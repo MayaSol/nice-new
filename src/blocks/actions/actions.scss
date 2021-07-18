@@ -4,7 +4,7 @@
 
 .actions {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   @media (min-width: $screen-md) {
     margin-top: 110px;
@@ -36,7 +36,7 @@
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.6px;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
 
     @media (min-width: $screen-md) {
       margin-bottom: 25px;
@@ -67,10 +67,10 @@
       background-color: #fff;
     }
 
-    @at-root .tns-horizontal.tns-subpixel > .tns-item & {
-          @media (min-width: $screen-md) {
-            flex-grow: 1;
-          }
+    @at-root .tns-horizontal.tns-subpixel>.tns-item & {
+      @media (min-width: $screen-md) {
+        flex-grow: 1;
+      }
     }
   }
 
@@ -107,6 +107,14 @@
     }
   }
 
+
+  &__img {
+    display: none;
+    border-radius: 12px;
+    overflow: hidden;
+
+  }
+
   &__item {
 
     color: inherit;
@@ -127,42 +135,49 @@
     &:nth-child(n+2) {
       display: none;
 
-       @media (min-width: $screen-md) {
-          display: block;
+      @media (min-width: $screen-md) {
+        display: block;
       }
     }
 
-    @at-root .tns-horizontal.tns-subpixel > &.tns-item {
+    @at-root .tns-horizontal.tns-subpixel>&.tns-item {
 
       @media (min-width: $screen-md) {
         display: flex;
         flex-direction: column;
       }
     }
-  }
 
-  &__img {
-    display: none;
-    border-radius: 12px;
-    overflow: hidden;
 
-    @media (min-width: $screen-xxl) {
-      position: absolute;
-      left: -67px;
-      top: 0;
-      bottom: 0;
-      right: 67px;
-      z-index: -1;
+    &--show-img {
+      position: relative;
+
+      .actions__img {
+
+        @media (min-width: $screen-xxl) {
+          display: block;
+          position: absolute;
+          left: -67px;
+          top: 0;
+          bottom: 0;
+          right: -67px;
+          z-index: -1;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-family: 'object-fit: cover;';
+          }
+        }
+      }
     }
 
-    img {
-      @media (min-width: $screen-xxl) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        font-family: 'object-fit: cover;';
-      }
+    @at-root .tns-slider .actions__img {
 
+      @media (min-width: $screen-xxl) {
+        right: 67px;
+      }
     }
   }
 
@@ -182,25 +197,25 @@
     }
   }
 
-  .tns-slide-active + .tns-slide-active + .tns-slide-active + .tns-slide-active {
+  .tns-slide-active+.tns-slide-active+.tns-slide-active+.tns-slide-active {
     @media (min-width: $screen-xxl) {
       opacity: 0.3;
     }
   }
 
-  .tns-slide-active + .tns-slide-active  #{$block-name}__img {
+  .tns-slide-active+.tns-slide-active #{$block-name}__img {
     @media (min-width: $screen-xxl) {
       display: block;
     }
   }
 
-  .tns-slide-active + .tns-slide-active + .tns-slide-active  #{$block-name}__img {
+  .tns-slide-active+.tns-slide-active+.tns-slide-active #{$block-name}__img {
     @media (min-width: $screen-xxl) {
       display: none;
     }
   }
 
-  .tns-slide-active + .tns-slide-active + .tns-slide-active + .tns-slide-active  #{$block-name}__img {
+  .tns-slide-active+.tns-slide-active+.tns-slide-active+.tns-slide-active #{$block-name}__img {
     @media (min-width: $screen-xxl) {
       display: none;
     }

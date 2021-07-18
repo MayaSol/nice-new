@@ -1,12 +1,12 @@
-//- Все примеси в этом файле должны начинаться c имени блока (actions)
+//- Все примеси в этом файле должны начинаться c имени блока (actions-all)
 
-mixin actions(mods)
+mixin actions-all(text, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +actions('Текст', 'some-mod')
+        +actions-all('Текст', 'some-mod')
 
   -
     // список модификаторов
@@ -14,28 +14,18 @@ mixin actions(mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' actions--' + modsList[i].trim();
+        allMods = allMods + ' actions-all--' + modsList[i].trim();
       }
     }
 
-  section.actions(class=allMods)&attributes(attributes)
-    .actions__inner
+  .actions-all(class=allMods)&attributes(attributes)
+    .actions-all__inner
       block
 
 
-mixin actions-item(props,mods)
+mixin actions-all-item(props)
 
-  -
-    // список модификаторов
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' actions__item--' + modsList[i].trim();
-      }
-    }
-
-  .actions__item(class=allMods)&attributes(attributes)
+  .actions__item
     .actions__date !{props.date}
     .actions__caption !{props.caption}
     .actions__more

@@ -98,6 +98,10 @@
       margin-right: 0;
     }
 
+    @media (min-width: $screen-xxl) {
+      margin-right: 32px;
+    }
+
     &--active {
 
       & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist

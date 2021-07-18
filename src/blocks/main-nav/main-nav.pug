@@ -59,9 +59,9 @@ mixin makeMainNav(selectedID,menu,attr)
       +social()
       .cards.cards--nav
         .cards__list
-          +cards-item({text:'Клубная карта 1&nbsp;мес.', price: '2 250'})(href="#")
-          +cards-item({text:'Клубная карта 5&nbsp;мес.', price: '8 000'})
-          +cards-item({text:'Клубная карта 12&nbsp;мес.', price: '18 000'})
+          +cards-item({text:'Клубная карта 1&nbsp;мес.', price: '2 250'},'01')(href="#")
+          +cards-item({text:'Клубная карта 5&nbsp;мес.', price: '8 000'},'02')
+          +cards-item({text:'Клубная карта 12&nbsp;мес.', price: '18 000'},'03')
 
 
 mixin makeNav(selectedID,menu,attr)

@@ -92,15 +92,15 @@
     flex-grow: 1;
 
 
-    // &::before {
-    //   // z-index: -1;
-    //   position: absolute;
-    //   left: 0;
-    //   top: 0;
-    //   //top: -5280px;
-    //   content: url('../screen/cards.jpg');
-    //   opacity: 0.4;
-    // }
+    &::before {
+      // z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      //top: -5280px;
+      content: url('../screen/command-mobile.jpg');
+      opacity: 0.4;
+    }
   }
 
   &__main {

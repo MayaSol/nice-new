@@ -1,0 +1,22 @@
+@mixin btn-arrow {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 55px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(101,204,50,0.2);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    stroke: $color-bright;
+  }
+
+  &--prev {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
