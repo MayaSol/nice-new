@@ -98,7 +98,7 @@
       left: 0;
       top: 0;
       //top: -5280px;
-      content: url('../screen/command-mobile.jpg');
+      content: url('../screen/command.jpg');
       opacity: 0.4;
     }
   }
@@ -616,5 +616,58 @@ pre {
     @media (min-width: $screen-md) {
       margin-top: 0;
     }
+  }
+}
+
+.command__list {
+  margin-top: 10px;
+  font-size: 12px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 0;
+  }
+}
+
+
+
+.command__img {
+  margin-top: 25px;
+
+  @media (min-width: $screen-md) {
+    width: 282px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    width: 400px;
+  }
+}
+
+
+.command__list-title {
+  margin-top: 22px;
+  margin-bottom: 10px;
+
+  @media (min-width: $screen-xxl) {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.command__list {
+}
+
+@media (min-width: $screen-xxl) {
+
+  .command__img {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .command__list {
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
 }

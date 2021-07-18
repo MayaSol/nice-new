@@ -1,0 +1,196 @@
+// В этом файле должны быть стили для БЭМ-блока accordion, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.accordion {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @include container;
+  position: relative;
+
+  @media (min-width: $screen-xxl) {
+    min-height: 1000px;
+  }
+
+  &__wrapper {
+    margin-top: 30px;
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 55px;
+    }
+  }
+
+  &__item {
+  }
+
+  &__header {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+
+    @media (min-width: $screen-xxl) {
+      width: 465px;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 15px;
+    white-space: normal;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__item-subtitle {
+    display: none;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.24px;
+    text-transform: none;
+    white-space: normal;
+
+    @media (min-width: $screen-xxl) {
+      display: block;
+    }
+  }
+
+  &__btn.btn {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 0.24px;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: color .25s ease;
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $color-bright;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &.collapsed {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.36px;
+      color: rgba(255,255,255,0.5);
+      border-bottom: 1px solid #fff;
+
+      #{$block-name}__item-subtitle {
+
+        @media (min-width: $screen-xxl) {
+          display: none;
+        }
+      }
+
+      #{$block-name}__item-title {
+
+        @media (min-width: $screen-md) {
+          font-size: 20px;
+          font-weight: 500;
+          letter-spacing: 0.4;
+        }
+      }
+
+
+    }
+
+    &:not(.collapsed) {
+
+      #{$block-name}__item-title {
+
+        @media (min-width: $screen-md) {
+          font-size: 20px;
+          font-weight: 800;
+        }
+
+        @media (min-width: $screen-xxl) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+
+
+  &__panel {
+    overflow: hidden;
+    transition-property: height, visibility;
+    transition-timing-function: ease;
+
+    @media (min-width: $screen-xxl) {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    p {
+      hyphens: none;
+    }
+
+    &.show {
+      border-bottom: 1px solid $color-bright;
+
+      @media (min-width: $screen-md) {
+        padding-bottom: 35px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        border: none;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.24px;
+
+    @media (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 10px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 960px;
+      margin-top: 10px;
+    }
+
+    & > p {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      width: 460px;
+
+      @media (min-width: $screen-xxl) {
+        display: none;
+      }
+    }
+  }
+
+
+}
+
+
+.accordion-body {
+  padding: 0;
+}

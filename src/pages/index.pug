@@ -1,0 +1,155 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'command';
+
+block nav
+  +main-nav('10')
+
+block top
+  +breadcrumbs()
+      +breadcrumbs-item('Главная', '/')
+      +breadcrumbs-item('Клубные карты')
+
+block content
+  +banner('command')
+    .banner__text
+      h1.page__main-title команда <span>nicefitness</span>
+      p Наша команда Nicefitness – это профессиональные фитнес-инструктора с высшим образованием, регулярно проходящие курсы повышения квалификации в области спорта и здорового образа жизни.
+
+  +accordion({id:"accordionCommand"},'command')
+    +accordion-item({
+      parentId: "accordionCommand",
+      headerId: "header_01",
+      collapseId: "collapse_01",
+      title: "Форменов Александр",
+      show: true})
+      p Фитнес-директор и менеджер по развитию персонала «Nice Fitness» персональный тренер категория «Элит»
+      .command__img
+        img(src="/img/command/novikov.jpg")
+      .command__list
+        span.list-title.command__list-title Достижения
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+      .command__list
+        span.list-title.command__list-title Дополнительные звания
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+      .command__list
+        span.list-title.command__list-title Методический арсенал
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+    +accordion-item({
+    parentId: "accordionCommand",
+      headerId: "header_02",
+      collapseId: "collapse_02",
+      title: "Драбкина Ольга",})
+      p Фитнес-директор и менеджер по развитию персонала «Nice Fitness» персональный тренер категория «Элит»
+      .command__img
+        img(src="/img/command/novikov.jpg")
+      span.list-title.command__list-title Достижения
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+      span.list-title.command__list-title Дополнительные звания
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+      span.list-title.command__list-title Методический арсенал
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+    +accordion-item({
+      parentId: "accordionCommand",
+      headerId: "header_03",
+      collapseId: "collapse_03",
+      title: "Катенев Александр"})
+      p Фитнес-директор и менеджер по развитию персонала «Nice Fitness» персональный тренер категория «Элит»
+      //- .command__img
+      //-   img(src="/img/command/novikov.jpg")
+      span.list-title.command__list-title Достижения
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+      span.list-title.command__list-title Дополнительные звания
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+      span.list-title.command__list-title Методический арсенал
+        ul.list-dots.command__list
+          li Аспирантура (к.б.н.) РГУФКСМиТ
+          li Магистр РГУФКСМиТ
+          li Преподаватель лицея «Учёный Фитнес»
+          li Автор научных статей в журналах рецензируемых ВАК
+          li Фитнес-Нутрициолог
+          li Тренер чемпиона Европы и МСМК
+          li AWPC (в дисциплине «Жим лёжа»)
+
+
+  +app()
+    .page__subtitle Скачайте мобильное приложение
+    p Мобильное приложение Nicefitness для эффективного достижения ваших спортивных целей.
+    .app__btns
+      +btn('','plain, appstore')
+      +btn('','plain, googleplay')
+    .app__qr
+
+
+block append page-bottom
+  +modal({id: 'card-order'})
+    +card-order()
+  +modal({id: 'service-massage'})(class="modal-service")
+    .modal-service__title массаж
+    p Скульптура тела <a href="#">Лаборатория-массажа.рф</a> рада предложить вам множество полезных и приятных процедур, благодаря которым вы сможете скорректировать фигуру, избавиться от болей в мышцах и полностью расслабиться.<br> <b>Дополнительным бонусом мы сделали скидку 15% на первый сеанс.</b>
+

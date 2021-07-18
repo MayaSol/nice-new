@@ -1,0 +1,43 @@
+//- Все примеси в этом файле должны начинаться c имени блока (accordion)
+
+mixin accordion(props,mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +accordion('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' accordion--' + modsList[i].trim();
+      }
+    }
+
+  .accordion__wrapper(class=allMods)&attributes(attributes)
+    .accordion(id=props.id)
+      block
+
+
+mixin accordion-item(props)
+  -
+    var classShow = "";
+    var classCollapsed = "collapsed";
+    if (props.show) {
+      classShow = "show";
+      classCollapsed = "";
+    }
+
+  .accordion__item(class=allMods)&attributes(attributes)
+    h2.accordion__header(id=props.headerId)
+      +btn('','plain')(class="accordion-button accordion__btn " + classCollapsed type="button" data-bs-toggle="collapse" data-bs-target="#" + props.collapseId aria-expanded="true" aria-controls=props.collapseId)
+        .accordion__item-title= props.title
+        .accordion__item-subtitle Фитнес-директор и менеджер по развитию персонала «Nice Fitness» персональный тренер, категория «Элит»
+    .accordion__panel.accordion-collapse.collapse(id=props.collapseId aria-labelledby=props.headerId data-bs-parent="#" + props.parentId class=classShow)
+      .accordion__text.accordion-body
+        block
+
+

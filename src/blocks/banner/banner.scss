@@ -8,6 +8,10 @@
 
   margin-top: 42px;
 
+  @media (min-width: $screen-xxl) {
+    margin-top: 72px;
+  }
+
   * {
     position: relative;
     z-index: 10;
@@ -15,6 +19,10 @@
 
   p {
     hyphens: none;
+
+    @media (min-width: $screen-xxl) {
+      width: 650px;
+    }
   }
 
   &__inner {
@@ -205,6 +213,23 @@
 
     .page__main-title span {
       display: block;
+    }
+  }
+
+  &--command {
+
+    .page__main-title {
+      margin-bottom: 22px;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 30px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        span {
+          display: inline;
+        }
+      }
     }
   }
 

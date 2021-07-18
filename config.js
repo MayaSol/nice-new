@@ -19,6 +19,7 @@ let config = {
     'tiny-slider/dist/tiny-slider.css',
     'src/blocks/slider/slider.scss',
     'lightgallery/css/lightgallery-bundle.min.css',
+    'bootstrap.min.css'
 
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
@@ -27,6 +28,7 @@ let config = {
   ],
   'addJsBefore': [
     '../blocks/slider/slider.js',
+    './bootstrap.bundle.min.js'
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
   ],
   'addJsAfter': [
@@ -36,6 +38,7 @@ let config = {
     'src/fonts/': 'fonts/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/gallery/': 'img/gallery',
+    'src/img/command/': 'img/command',
     'src/screen/': 'screen/',
 
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
