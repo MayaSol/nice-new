@@ -99,4 +99,24 @@ ready(function(){
     }
   }
 
+
+  var vacancies = document.querySelectorAll('.vacancies');
+  var sliderVacancies = [];
+  for (var i=0; i<vacancies.length; i++) {
+    var container = vacancies[i].querySelector('.vacancies__list');
+    var controls = vacancies[i].querySelector('.slider-controls');
+    if (container) {
+      sliderGroup[i] = tns({
+        container: container,
+        items: 1,
+        slideBy: 1,
+        mouseDrag: true,
+        controls: true,
+        controlsPosition: 'bottom',
+        controlsContainer: controls,
+        nav: false,
+      });
+    }
+  }
+
 });

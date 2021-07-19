@@ -6,11 +6,13 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  position: relative;
   padding-bottom: 432px;
   margin-top: 110px;
   background-image: url(../img/app_bg--mobile.jpg);
   background-repeat: no-repeat;
   background-position: bottom center;
+  z-index: 5;
 
   @media (min-width: $screen-md) {
     margin-top: 95px;

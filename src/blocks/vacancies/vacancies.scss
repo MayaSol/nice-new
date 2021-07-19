@@ -1,0 +1,116 @@
+// В этом файле должны быть стили для БЭМ-блока vacancies, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.vacancies {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin-top: 100px;
+
+  &__inner {
+    @include container;
+    position: relative;
+
+    &::before {
+      @media (min-width: $screen-xxl) {
+        content: '';
+        position: absolute;
+        width: 888px;
+        height: 923px;
+        right: 0;
+        top: -240px;
+        background-image: url(../img/vacancies-bg.jpg);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .page__subtitle {
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.36px;
+    line-height: 1.3;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 30px;
+      font-size: 20px;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  &__list-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+
+    @media (min-width: $screen-md) {
+      font-size: 16px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 25px;
+    font-size: 12px;
+    line-height: 1.4;
+
+    li {
+      padding-left: 22px;
+      margin-bottom: 17px;
+    }
+  }
+
+  &__desc {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+
+  }
+
+  &__item-list {
+
+    @media (min-width: $screen-md) {
+      flex-basis: 49%;
+    }
+
+
+    @media (min-width: $screen-xxl) {
+      flex-basis: 46%;
+    }
+  }
+
+  &__item-inner {
+
+    @media (min-width: $screen-xxl) {
+      width: 850px;
+    }
+  }
+
+  .slider-controls {
+
+    @media (min-width: $screen-md) {
+      position: absolute;
+      top: -10px;
+      right: 40px;
+    }
+  }
+}

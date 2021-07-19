@@ -1,0 +1,50 @@
+//- Все примеси в этом файле должны начинаться c имени блока (vacancies)
+
+mixin vacancies(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +vacancies('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' vacancies--' + modsList[i].trim();
+      }
+    }
+
+  .vacancies(class=allMods)&attributes(attributes)
+    .vacancies__inner
+      block
+
+
+
+mixin vacancies-item(props)
+
+  .vacancies__item(class=allMods)&attributes(attributes)
+    .vacancies__item-inner
+      .vacancies__item-title !{props.title}
+      .vacancies__desc
+        .vacancies__item-list
+          span.list-title.vacancies__list-title Должностные обязанности
+          ul.list-dots.vacancies__list
+            li Проведение персональных тренировок
+            li Проведение групповых программ по танцевальным направлениям
+            li Проведение групповых программ по восточным единоборствам
+            li Проведение групповых программ по Yoga
+            li Проведение групповых программ по Pilates
+            li Инструктор -" универсал"
+        .vacancies__item-list
+          span.list-title.vacancies__list-title Требования к кандидату
+          ul.list-dots.vacancies__list
+            li Высшее физкультурное педагогическое или медицинское образование
+            li Сертификаты, курсы или дипломы, подтверждающие квалификацию инструктора
+            li Спортивный или соревновательный опыт
+            li Опыт работы в фитнес индустрии - более года. Возраст - от 20 до 45 лет.
+            li Пол не имеет значения
+      block
