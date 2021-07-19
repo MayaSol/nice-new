@@ -39,6 +39,7 @@ let config = {
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/gallery/': 'img/gallery',
     'src/img/command/': 'img/command',
+    'src/img/action/': 'img/action',
     'src/screen/': 'screen/',
 
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
