@@ -99,7 +99,7 @@
     //   // top: -815px; //vacancies
     //   // top: -275px;
     //   //top: -5280px;
-    //   content: url('../screen/action-wide.jpg');
+    //   content: url('../screen/map.jpg');
     //   opacity: 0.4;
     // }
   }
@@ -551,13 +551,7 @@ pre {
   margin-top: 15px;
 }
 
-.contacts {
-  margin-top: 16px;
 
-  @media (min-width: $screen-md) {
-    margin-top: 46px;
-  }
-}
 
 .copyright {
   margin-top: 26px;
@@ -818,4 +812,15 @@ pre {
 
 .article {
   @include container;
+}
+
+.page-map {
+
+  .social {
+    display: none;
+  }
+
+  .page__footer-wrapper {
+    margin-top: 40px;
+  }
 }

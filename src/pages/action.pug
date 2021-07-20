@@ -1,0 +1,62 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'action';
+
+block nav
+  +main-nav('10')
+
+block top
+  +breadcrumbs()
+      +breadcrumbs-item('Главная', '/')
+      +breadcrumbs-item('Акции')
+
+block content
+  .article.article--action
+    .article__date 10 декабря 2020
+    h1.page__main-title Скорее записывайтесь в мини группу "ЖИРОТОПКА"!
+    +social()
+    .article__img
+      <img class=" lazyload" data-src="/img/action/action_280x280.jpg" data-srcset="/img/action/action_280x280.jpg 280w,/img/action/action_689x358.jpg 689w,/img/action/action_578x606.jpg 578w" data-sizes="(max-width: 767px) 280px,(max-width: 1919px) 689px,(min-width: 1920px) 578px" >
+    .article__text
+      p.article__lead
+        b Привет всем кто настроен, работать на результат!
+      p Скорее записывайтесь в мини группу "ЖИРОТОПКА"! Жиротопка - это групповая тренировка в составе до 5 человек.
+      p Проходит тренировка под чутким руководством персонального тренера и включает в себя:
+      ul.list-dots.list-dots--narrow
+        li Разработка индивидуального протокола для аэробной тренировки на жиросжигание;
+        li Силовая тренировка в тренажерном зале;
+        li Дистанционное сопровождение в группе WHATSAPP:
+        li Задание по питанию (фотоотчёт);
+        li Дополнительные задания по физической активности;
+        li Соревнования между участниками (балльная система оценивания).
+        li Победитель получает приз (скидка на следующий блок тренировок 15 %).
+      p Занятия проводят: Драбкина Ольга, Денисенко Юлия и Пасхина Людмила.
+      p
+        b Стоимость 8 занятий 7200 рублей в месяц.
+      p Подробная информация и запись в группу на рецепции клуба.
+
+  +app()
+    .page__subtitle Скачайте мобильное приложение
+    p Мобильное приложение Nicefitness для эффективного достижения ваших спортивных целей.
+    .app__btns
+      +btn('','plain, appstore')
+      +btn('','plain, googleplay')
+    .app__qr
+
+
+block append page-bottom
+  +modal({id: 'card-order'})
+    +card-order()
+  +modal({id: 'service-massage'})(class="modal-service")
+    .modal-service__title массаж
+    p Скульптура тела <a href="#">Лаборатория-массажа.рф</a> рада предложить вам множество полезных и приятных процедур, благодаря которым вы сможете скорректировать фигуру, избавиться от болей в мышцах и полностью расслабиться.<br> <b>Дополнительным бонусом мы сделали скидку 15% на первый сеанс.</b>
+

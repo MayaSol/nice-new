@@ -5,10 +5,8 @@ const ready = require('../../js/utils/documentReady.js');
 ready(function(){
 
     const galleries = document.querySelectorAll('.gallery__list');
-    console.log(galleries);
 
     for (var i=0; i<galleries.length; i++) {
-      console.log(galleries[i]);
       lightGallery(galleries[i], {
           plugins: [lgThumbnail],
           selector: '.gallery__item[id^=tns]',

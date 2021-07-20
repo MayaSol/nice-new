@@ -9,6 +9,7 @@ let config = {
   ],
   'alwaysAddBlocks': [
     'sprite-svg',
+    'map',
     'test' //!!!!
     // 'sprite-png',
     // 'object-fit-polyfill',

@@ -31,7 +31,6 @@ ready(function(){
   }
 
   var groups = document.querySelectorAll('.group');
-  console.log(groups);
   var sliderGroup = [];
   for (var i=0; i<groups.length; i++) {
     var container = groups[i].querySelector('.group__list');
@@ -64,7 +63,6 @@ ready(function(){
   }
 
   var gallery = document.querySelectorAll('.gallery');
-  console.log(gallery);
   var sliderGallery = [];
   for (var i=0; i<gallery.length; i++) {
     var container = gallery[i].querySelector('.gallery__list');
